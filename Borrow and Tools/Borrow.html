@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dock_to_right" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="borrow.css">
+</head>
+<body>
+    <div class="d-flex flex-wrap">
+        <div class="sidebar p-3" id="sidebar">
+            <!-- <span class="material-symbols-outlined" id="toggleSidebar">dock_to_right</span> -->
+            <div class="logo">
+                <img src="images/logo1.png" alt="COMPED Logo" class="logo-img img-fluid">
+            </div>
+            <a href="../Event Home/Event.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/home/v7/24px.svg" alt="Home" class="menu-icon">
+                <span class="menu-text">Home</span>
+            </a>
+            <a href="../Event Calendar/Calendar.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/calendar_today/v7/24px.svg" alt="Events" class="menu-icon">
+                <span class="menu-text">Events</span>
+            </a>
+            <a href="../Attendance/Attendance.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/person/v7/24px.svg" alt="Attendance" class="menu-icon">
+                <span class="menu-text">Attendance</span>
+            </a>
+            <a href="../Finance/Finance.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/paid/v7/24px.svg" alt="Finance" class="menu-icon">
+                <span class="menu-text">Finance</span>
+            </a>
+            <a href="../Borrow and Tools/Borrow.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/construction/v7/24px.svg" alt="Borrowing & Inventory" class="menu-icon">
+                <span class="menu-text">Borrowing & Inventory</span>
+            </a>
+        </div>
+
+         <div class="content-wrapper flex-grow-1 container-fluid">
+            <div class="main-content">
+                <div class="d-flex flex-wrap align-items-center mb-4">
+                    <div class="search w-100">
+                        <input placeholder="Search..." type="text" class="form-control">
+                      <!--  <button type="submit" class="btn btn-primary mt-2">Go</button> -->
+                    </div>
+                </div>
+                <hr style="border-top: 20px solid #006eff; margin: 15px 0;">
+                
+                <div class="hero">
+                    <div>
+                        <h3>COMPED</h3>
+                        <p>Borrowing and Inventory</p>
+                        <button class="schedule-button btn btn-primary mt-3">View Borrowed and Returned</button>
+                    </div>
+                    <div>
+                        <img src="images/arduino.png" alt="Hero Image">
+                    </div>
+                </div>
+
+                <div class="previous-events">
+                    <h5>Borrow Tools</h5>
+                    <div class="d-flex flex-wrap">
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/arduinouno.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Microcontrollers</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">View Tools</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/breadboard.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Prototyping Tools</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">View Tools</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/ultrasonic.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Sensors</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">View Tools</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- Borrowing and Item Collection Box -->
+<div class="box-container mt-5">
+    <div class="row">
+        <!-- Borrowing Form Section -->
+        <div class="col-md-6">
+            <div class="borrowing-form-box p-3 border rounded">
+                <h5>Borrowing Form (Mushow rani dapat if clicked and View Tools)</h5>
+                <hr style="border-top: 20px solid #006eff; margin: 15px 0;"> 
+                <form>
+                    <div class="mb-3">
+                        <label for="userId" class="form-label">User ID</label>
+                        <input type="text" class="form-control" id="userId" placeholder="Enter User ID">
+                    </div>
+                    <div class="mb-3">
+                        <label for="borrowerName" class="form-label">Borrower Name</label>
+                        <input type="text" class="form-control" id="borrowerName" placeholder="Enter Borrower's Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="schoolId" class="form-label">School ID</label>
+                        <input type="text" class="form-control" id="schoolId" placeholder="Enter School ID">
+                    </div>
+                    <div class="mb-3">
+                        <label for="dateIssued" class="form-label">Date Issued</label>
+                        <input type="date" class="form-control" id="dateIssued">
+                    </div>
+                    <div class="mb-3">
+                        <label for="returnDate" class="form-label">Return Date</label>
+                        <input type="date" class="form-control" id="returnDate">
+                    </div>
+                    <div class="mb-3">
+                        <label for="borrowItems" class="form-label">Borrowed Items</label>
+                        <div class="d-flex align-items-center">
+                            <button type="button" class="btn btn-success">+</button>
+                            <input type="text" class="form-control mx-2" id="borrowItems" placeholder="Add Items" readonly>
+                            <button type="button" class="btn btn-danger">-</button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Borrow</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Collection of Items (Images) Section -->
+        <div class="col-md-6">
+            <div class="item-collection-box p-3 border rounded">
+                <h5>Item Collection</h5>
+                <hr style="border-top: 20px solid #006eff; margin: 15px 0;"> 
+                <div class="d-flex flex-wrap">
+                    <div class="card" style="width: 10rem;">
+                        <img src="images/arduinouno.png" class="card-img-top" alt="Microcontroller">
+                        <div class="card-body">
+                            <p class="card-text">Microcontroller</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 10rem;">
+                        <img src="images/breadboard.png" class="card-img-top" alt="Breadboard">
+                        <div class="card-body">
+                            <p class="card-text">Breadboard</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 10rem;">
+                        <img src="images/ultrasonic.png" class="card-img-top" alt="Sensor">
+                        <div class="card-body">
+                            <p class="card-text">Sensor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+<!-- Borrowed and Returned Items History Box -->
+<div class="box-container mt-5 p-4 border rounded">
+    <h5>Borrowed and Returned Items (Mushow rani dapat if clicked and View Borrowed and Returned)</h5>
+    <div class="d-flex flex-column">
+        <!-- Borrowed Items Table -->
+        <div class="mb-4">
+            <h6>Borrowed Items</h6>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Amount of Items</th>
+                        <th scope="col">Date Issued</th>
+                        <th scope="col">Borrowed Date</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Microcontroller</td>
+                        <td>2</td>
+                        <td>2025-01-01</td>
+                        <td>2025-01-02</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>Breadboard</td>
+                        <td>1</td>
+                        <td>2025-01-02</td>
+                        <td>2025-01-03</td>
+                        <td>Returned</td>
+                    </tr>
+                    <!-- More rows can be added here -->
+                </tbody>
+            </table>
+        </div>
+
+        <hr style="border-top: 20px solid #006eff; margin: 15px 0;"> 
+        <!-- Returned Items Table -->
+        <div>
+            <h6>Returned Items</h6>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Amount of Items</th>
+                        <th scope="col">Date Issued</th>
+                        <th scope="col">Borrowed Date</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sensor</td>
+                        <td>1</td>
+                        <td>2025-01-05</td>
+                        <td>2025-01-06</td>
+                        <td>Returned</td>
+                    </tr>
+                    <tr>
+                        <td>Prototyping Tools</td>
+                        <td>3</td>
+                        <td>2025-01-07</td>
+                        <td>2025-01-08</td>
+                        <td>Pending</td>
+                    </tr>
+                    <!-- More rows can be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+        </div>
+
+
+        <div class="right-sidebar">
+            <div class="user-info">
+                <img src="images/profile.jpg" alt="Profile Image">
+                <div>
+                    <h5>Jeriebel Calunsag</h5>
+                    <p>Online</p>
+                </div>
+            </div>
+
+                <!--     <h5>Attendance</h5>
+    <hr style="border-top: 3px solid #ccc; margin: 15px 0;">
+                <p>Track your attendance for events here.</p>
+            </div>
+        </div>
+    </div> 
+    --> 
+    
+          
+         
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('toggleSidebar').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('minimized');
+        });
+    </script>
+</body>
+</html>
