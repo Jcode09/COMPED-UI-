@@ -51,7 +51,14 @@
                          <!--   <button type="submit" class="btn btn-primary mt-2">Go</button> -->
                         </div>
                     </div>
-                    <hr style="border-top: 20px solid #006eff; margin: 15px 0;">
+                    <div style="display: flex; align-items: center; margin: 15px 0;">
+                        <div style="text-align: left; margin-right: 10px;">
+                            <span style="white-space: nowrap; font-size: 1.75rem; font-weight: bold;">Events</span>
+                            <br>
+                            <span style="font-size: 0.875rem; color: #777;">Keep Updated with the Events and Seminars.</span>
+                        </div>
+                        <hr style="border-top: 5px solid #0077ff; flex-grow: 1; margin-left: 10px;">
+                    </div>
 
  <!-- Add Reintroduced Carousel Here -->
  <div id="monthlyCardCarousel" class="carousel slide mb-4" data-bs-ride="false">
@@ -125,6 +132,15 @@
     </button>
 </div>
 
+<div style="display: flex; align-items: center; margin: 15px 0;">
+    <hr style="border-top: 5px solid #0077ff; flex-grow: 1; margin-right: 10px;">
+    <div style="text-align: center; position: relative;">
+        <span style="font-size: 1.75rem; font-weight: bold; background-color: #fff; padding: 0 10px;">Calendar</span>
+        <br>
+        <span style="font-size: 0.875rem; color: #777;">Keep Updated with the Events.</span>
+    </div>
+    <hr style="border-top: 5px solid #0077ff; flex-grow: 1; margin-left: 10px;">
+</div>
 
 
 <div class="calendar-container">
@@ -184,39 +200,53 @@
 
 
 <!-- New Container Below Calendar -->
-<div class="event-container">
-    <div class="row">
+<div class="event-container border rounded">
+    <!-- Header -->
+    <div class="container-fluid bg-primary text-white text-center p-3 rounded-top">
+        <h4 class="mb-0">Upcoming Events</h4>
+    </div>
+
+    <div class="row mt-4"> <!-- Added margin-top here for spacing -->
         <!-- Cards Section -->
         <div class="col-lg-8 d-flex">
-            <!-- First Card -->
-            <div class="card me-2" style="width: 18rem;">
-                <div class="card-body">
-                    <img src="images/himamat.png" class="card-img-top" alt="Event Image">
-                    <h5 class="card-title">Event Title 1</h5>
+            <!-- First Custom Card -->
+            <div class="custom-card me-2 mb-3" style="width: 18rem;"> <!-- Added bottom margin -->
+                <div class="custom-card-body">
+                    <img src="images/himamat.png" class="custom-card-img-top" alt="Event Image">
+                    <h5 class="custom-card-title">Event Title 1</h5>
+                    <p>Event Description</p>
                 </div>
             </div>
 
-            <!-- Second Card -->
-            <div class="card me-2" style="width: 18rem;">
-                <div class="card-body">
-                    <img src="images/event2.png" class="card-img-top" alt="Event Image">
-                    <h5 class="card-title">Event Title 2</h5>
+            <!-- Second Custom Card -->
+            <div class="custom-card me-2 mb-3" style="width: 18rem;"> <!-- Added bottom margin -->
+                <div class="custom-card-body">
+                    <img src="images/timbaya.png" class="custom-card-img-top" alt="Event Image">
+                    <h5 class="custom-card-title">Event Title 2</h5>
+                    <p>Event Description</p>
                 </div>
             </div>
 
-            <!-- Third Card -->
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <img src="images/event3.png" class="card-img-top" alt="Event Image">
-                    <h5 class="card-title">Event Title 3</h5>
+            <!-- Third Custom Card -->
+            <div class="custom-card mb-3" style="width: 18rem;"> <!-- Added bottom margin -->
+                <div class="custom-card-body">
+                    <img src="images/ubdays.png" class="custom-card-img-top" alt="Event Image">
+                    <h5 class="custom-card-title">Event Title 3</h5>
+                    <p>Event Description</p>
                 </div>
             </div>
         </div>
 
         <!-- Table Section -->
         <div class="col-lg-4">
-            <table class="table">
-                <thead>
+            <!-- Table Header -->
+            <div class="table-header bg-primary text-white text-center p-3 rounded-top mb-3"> <!-- Added bottom margin -->
+                <h5 class="mb-0">Event Schedule</h5>
+            </div>
+
+            <!-- Table Body -->
+            <table class="table table-striped table-hover table-bordered mt-2 shadow-sm rounded">
+                <thead class="table-primary">
                     <tr>
                         <th scope="col">Event Month</th>
                         <th scope="col">Date & Time</th>
@@ -227,17 +257,17 @@
                     <tr>
                         <td>January</td>
                         <td>January 25, 2025 | 10:00 AM</td>
-                        <td><button class="btn btn-info">View Details</button></td>
+                        <td><a href=" " class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2">View Details</a></td>
                     </tr>
                     <tr>
                         <td>February</td>
                         <td>February 15, 2025 | 2:00 PM</td>
-                        <td><button class="btn btn-info">View Details</button></td>
+                        <td><a href=" " class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2">View Details</a></td>
                     </tr>
                     <tr>
                         <td>March</td>
                         <td>March 30, 2025 | 5:00 PM</td>
-                        <td><button class="btn btn-info">View Details</button></td>
+                        <td><a href=" " class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2">View Details</a></td>
                     </tr>
                 </tbody>
             </table>
