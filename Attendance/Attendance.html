@@ -49,65 +49,104 @@
                       <!--  <button type="submit" class="btn btn-primary mt-2">Go</button> -->
                     </div>
                 </div>
-                <hr style="border-top: 20px solid #006eff; margin: 15px 0;">
+                <div style="display: flex; align-items: center; margin: 15px 0;">
+                    <div style="text-align: left; margin-right: 10px;">
+                        <span style="white-space: nowrap; font-size: 1.75rem; font-weight: bold;">Attendance</span>
+                        <br>
+                        <span style="font-size: 0.875rem; color: #777;">Monitor your own Attendance.</span>
+                    </div>
+                    <hr style="border-top: 5px solid #0077ff; flex-grow: 1; margin-left: 10px;">
+                </div>
                    
                     
-                        <!-- Attendance -->
-                        <div class="attendance-box mt-4 p-3">
-                            <h5>Attendance</h5>
-                            <table class="table table-striped mt-3">
-                                <thead>
-                                    <tr>
-                                        <th>Event</th>
-                                        <th>Date</th>
-                                        <th>Check-in Time</th>
-                                        <th>Check-out Time</th>
-                                        <th>Details</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Event 1</td>
-                                        <td>2025-01-30</td>
-                                        <td>08:00 AM</td>
-                                        <td>05:00 PM</td>
-                                        <td><button class="btn btn-info btn-sm">View</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Event 2</td>
-                                        <td>2025-02-05</td>
-                                        <td>09:00 AM</td>
-                                        <td>06:00 PM</td>
-                                        <td><button class="btn btn-info btn-sm">View</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Event 3</td>
-                                        <td>2025-02-10</td>
-                                        <td>10:00 AM</td>
-                                        <td>07:00 PM</td>
-                                        <td><button class="btn btn-info btn-sm">View</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        
-
-                        
-                        <!-- New Event Box -->
-<div class="event-box mt-4 p-3">
-    <div class="row">
-        <div class="col-md-4">
-            <img src="images/himamat.png" alt="Event Image" class="img-fluid rounded">
+         <!-- Attendance -->
+<div class="container mt-4">
+    <div class="card shadow border-0">
+        <!-- Header -->
+        <div class="card-header bg-primary text-white text-center">
+            <h5 class="mb-0">Attendance</h5>
         </div>
-        <div class="col-md-8">
-            <h5>
-                <i class="fas fa-check-circle"></i> Event Title
-            </h5>
-            <p class="event-description">This is a short description of the event. It gives an overview of the activities and what participants can expect.</p>
-            <button class="btn btn-info">Surveys</button>
+
+        <!-- Body -->
+        <div class="card-body">
+            <!-- Attendance Table -->
+            <table class="table table-striped mt-3">
+                <thead class="table-info text-center">
+                    <tr>
+                        <th scope="col">Event</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Check-in Time</th>
+                        <th scope="col">Check-out Time</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr>
+                        <td>Event 1</td>
+                        <td>2025-01-30</td>
+                        <td>08:00 AM</td>
+                        <td>05:00 PM</td>
+                        <td><a href=" " class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Event 2</td>
+                        <td>2025-02-05</td>
+                        <td>09:00 AM</td>
+                        <td>06:00 PM</td>
+                        <td><a href=" " class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Event 3</td>
+                        <td>2025-02-10</td>
+                        <td>10:00 AM</td>
+                        <td>07:00 PM</td>
+                        <td><a href=" " class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2">View Details</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer bg-light text-center text-muted">
+            <small>Ensure attendance details are accurate and up-to-date.</small>
         </div>
     </div>
 </div>
+
+
+                        
+         <!-- New Event Box -->
+<div class="container mt-4">
+    <div class="card shadow border-0">
+        <!-- Header -->
+        <div class="card-header bg-primary text-white text-center">
+            <h4 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Event Details</h4>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body">
+            <div class="row align-items-center">
+                <!-- Event Image -->
+                <div class="col-md-4 d-flex justify-content-center mb-3 mb-md-0">
+                    <img src="images/himamat.png" alt="Event Image" class="img-fluid rounded shadow-sm">
+                </div>
+                <!-- Event Information -->
+                <div class="col-md-8 text-md-start text-center">
+                    <h5 class="mt-2"><i class="fas fa-check-circle text-success me-2"></i>Event Title</h5>
+                    <p class="text-muted">This is a short description of the event. It gives an overview of the activities and what participants can expect.</p>
+                    <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2"><i class="fas fa-poll me-1"></i>Surveys</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer bg-light text-center text-muted">
+            <small>Stay updated with the latest Event.</small>
+        </div>
+    </div>
+</div>
+
+
 
                 </div>                
             </div>
