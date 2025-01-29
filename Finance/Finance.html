@@ -70,54 +70,78 @@
                         <input placeholder="Search..." type="text" class="form-control">
                       <!--  <button type="submit" class="btn btn-primary mt-2">Go</button> -->
                     </div>
-                </div>
-                <hr style="border-top: 20px solid #006eff; margin: 15px 0;">
+                  </div>
+                  <div style="display: flex; align-items: center; margin: 15px 0;">
+                      <div style="text-align: left; margin-right: 10px;">
+                          <span style="white-space: nowrap; font-size: 1.75rem; font-weight: bold;">Finance</span>
+                          <br>
+                          <span style="font-size: 0.875rem; color: #777;">Pay your Contribution and Fines here.</span>
+                      </div>
+                      <hr style="border-top: 5px solid #0077ff; flex-grow: 1; margin-left: 10px;">
+                  </div>
                 
-                <!-- Finance Area -->
-                <div class="container mt-4">
-                    <h3 class="mb-4">Finance</h3>
-                    <hr style="border-top: 20px solid #006eff; margin: 15px 0;"> 
-                    <div class="row">
-                        <!-- Finance Payment Box -->
-                        <div class="col-md-6">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Finance Payment</h5>
-                                    <p><strong>To Pay:</strong> PHP 1,500.00</p>
-                                    <p><strong>Payment History:</strong></p>
-                                    <button class="btn btn-primary">View Details</button>
-                                </div>
-                            </div>
-                        </div>
+   <!-- Finance Area -->
+<div class="container mt-4">
+  <!-- Header -->
+  <div class="card border mb-4">
+      <div class="card-header bg-primary text-white text-center">
+          <h4 class="mb-0"><i class="fas fa-wallet me-2"></i>Finance Payment</h4>
+      </div>
 
-                        <!-- Payment Gateway Box -->
-                        <div class="col-md-6">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Payment Gateway</h5>
-                                    <form>
-                                        <div class="mb-3">
-                                            <label for="paymentAmount" class="form-label">Amount</label>
-                                            <input type="text" id="paymentAmount" class="form-control" placeholder="Enter Amount" value="PHP 00.00">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="paymentMethod" class="form-label">Payment Method</label>
-                                            <div class="d-flex align-items-center">
-                                                <img src="images/gcash.png" alt="GCash Logo" style="width: 30px; height: 30px; margin-right: 10px;">
-                                                <span>GCash or Pay through the Treasurer</span>
-                                            </div>
-                                        </div>
-                                        <div class="form-check mb-3">
-                                            <input type="checkbox" class="form-check-input" id="savePaymentRecord">
-                                            <label class="form-check-label" for="savePaymentRecord">Save payment record</label>
-                                        </div>
-                                        <button type="button" class="btn btn-blue-round" data-bs-toggle="modal" data-bs-target="#miniTabModal" id="confirmButton">Confirm</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>    
+      <!-- Body -->
+      <div class="card-body">
+          <div class="row">
+              <!-- Finance Payment Box -->
+              <div class="col-md-6">
+                  <div class="card mb-4 border">
+                      <div class="card-body">
+                          <h5 class="card-title text-primary"><i class="fas fa-money-bill-wave me-2"></i>Finance Payment</h5>
+                          <p><strong>To Pay:</strong> ₱1,500.00</p>
+                          <p><strong>Payment History:</strong></p>
+                          <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2"><i class="fas fa-eye me-2"></i>View History</button>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Payment Gateway Box -->
+              <div class="col-md-6">
+                  <div class="card mb-4 border">
+                      <div class="card-body">
+                          <h5 class="card-title text-primary"><i class="fas fa-credit-card me-2"></i>Payment Gateway</h5>
+                          <form>
+                              <div class="mb-3">
+                                  <label for="paymentAmount" class="form-label">Amount</label>
+                                  <input type="text" id="paymentAmount" class="form-control" placeholder="Enter Amount" value="₱00.00">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="paymentMethod" class="form-label">Payment Method</label>
+                                  <div class="d-flex align-items-center">
+                                      <img src="images/gcash.png" alt="GCash Logo" style="width: 70px; height: 50px; margin-right: 10px;">
+                                      <span>GCash or Pay through the Treasurer</span>
+                                  </div>
+                              </div>
+                              <div class="form-check mb-3">
+                                  <input type="checkbox" class="form-check-input" id="savePaymentRecord">
+                                  <label class="form-check-label" for="savePaymentRecord">Save payment record</label>
+                              </div>
+                              <button type="button" class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#miniTabModal" id="confirmButton">
+                                  <i class="fas fa-check me-2"></i>Confirm
+                              </button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="card-footer bg-light text-center text-muted">
+          <small>Please ensure your payment details are accurate and up-to-date.</small>
+      </div>
+  </div>
+</div>
+
+
                  
                 
  
@@ -140,7 +164,7 @@
           </div>
         </div>
         <div class="modal-footer rounded-bottom bg-primary text-white rounded-top">
-          <button type="button" class="btn btn-primary px-4 py-2 rounded-pill border-2 border-white" data-bs-target="#qrModal" data-bs-toggle="modal">
+          <button type="button" class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-target="#qrModal" data-bs-toggle="modal">
             Next
           </button>
         </div>
@@ -163,7 +187,7 @@
         </div>
         <p style="text-align: center;">Note: If Scan Successfully, Please Click Confirm.</p>
         <div class="modal-footer rounded-bottom bg-primary text-white rounded-top">
-          <button type="button" class="btn btn-primary px-4 py-2 rounded-pill border-2 border-white" id="confirmButtonmodal">
+          <button type="button" class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" id="confirmButtonmodal">
             Confirm
           </button>
         </div>
@@ -222,8 +246,8 @@
     $('#confirmButtonmodal').on('click', function() {
       // Trigger SweetAlert popup
       Swal.fire({
-        title: "Good job!",
-        text: "Your payment is Processing",
+        title: "Processing!",
+        text: "Please Confirm your Payment at the Treasurer",
         icon: "success"
       });
 
