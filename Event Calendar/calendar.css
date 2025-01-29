@@ -931,6 +931,32 @@ margin-bottom: 10px;
 
 
 
+.custom-card {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-card-body {
+    padding: 1rem;
+    text-align: center;
+}
+
+.custom-card-img-top {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-card-title {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
 
 
 
