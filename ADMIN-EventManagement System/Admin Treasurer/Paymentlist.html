@@ -15,7 +15,7 @@
         <div class="sidebar p-3" id="sidebar">
             <!-- Logo Section -->
             <div class="logo">
-                <img src="images/logo1.png" alt="COMPED Logo" class="logo-img img-fluid">
+                <img src="images/COMPED_LOGO.png" alt="COMPED Logo" class="logo-img img-fluid">
             </div>
             
             <!-- Menu Items -->
@@ -66,7 +66,7 @@
 
 
 <!-- Finance -->
-<div class="container my-5">
+<div class="container-fluid my-5"> <!-- Changed to container-fluid -->
     <div class="card">
         <!-- Card Header -->
         <div class="card-header bg-primary text-white text-center">
@@ -76,36 +76,32 @@
         </div>
 
         <div class="card-body">
-            <div class="d-flex flex-column">
-                <!-- Finance Table -->
-                <div class="mb-4">
-                    <hr style="border-top: 20px solid #006eff; margin: 15px 0;">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Event</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Deadline</th>
-                                <th scope="col">Amount Fee</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>PCB Seminar</td>
-                                <td>2025-01-01</td>
-                                <td>2025-01-01</td>
-                                <td>PHP 100</td>
-                                <td>
-                                    <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="loadUserDetails('Jeriebel Calunsag', '123-2343-212')">
-                                        View
-                                    </button>
-                                </td>
-                            </tr>
-                            <!-- Add more rows as needed -->
-                        </tbody>
-                    </table>
-                </div>
+            <div class="table-responsive">
+                <table class="table table-striped w-100"> <!-- Added w-100 -->
+                    <thead class="table-primary text-center">
+                        <tr>
+                            <th scope="col">Event</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Deadline</th>
+                            <th scope="col">Amount Fee</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr>
+                            <td>PCB Seminar</td>
+                            <td>2025-01-01</td>
+                            <td>2025-01-01</td>
+                            <td>PHP 100</td>
+                            <td>
+                                <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="loadUserDetails('Jeriebel Calunsag', '123-2343-212')">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
             </div>
         </div>
 
@@ -115,6 +111,7 @@
         </div>
     </div>
 </div>
+
 
 
   <!-- Modal for Adding Contribution -->
