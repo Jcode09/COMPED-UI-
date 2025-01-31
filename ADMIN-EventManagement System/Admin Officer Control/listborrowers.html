@@ -15,7 +15,7 @@
         <div class="sidebar p-3" id="sidebar">
             <!-- Logo Section -->
             <div class="logo">
-                <img src="images/logo1.png" alt="COMPED Logo" class="logo-img img-fluid">
+                <img src="images/COMPED_LOGO.png" alt="COMPED Logo" class="logo-img img-fluid">
             </div>
             
             <!-- Menu Items -->
@@ -65,88 +65,97 @@
 
 
 <!-- Borrowed and Returned Items History Box -->
-<div class="container mt-5">
-    <div class="card shadow border-0">
+<div class="container-fluid mt-5">
+  <div class="card shadow border-0">
       <!-- Header -->
       <div class="card-header bg-primary text-white text-center">
-        <h4 class="mb-0">Borrowed and Returned Items History</h4>
+          <h4 class="mb-0">Borrowed and Returned Items History</h4>
       </div>
-  
+
       <!-- Body -->
       <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-striped align-middle">
-            <thead class="table-primary text-center">
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Student ID</th>
-                <th scope="col">Date Issued</th>
-                <th scope="col">Borrow Request</th>
-                <th scope="col">Return Date</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody class="text-center">
-              <tr>
-                <td>Jeriebel Calunsag</td>
-                <td>123-2343-212</td>
-                <td>2025-01-01</td>
-                <td>2025-01-02</td>
-                <td>Pending</td>
-                <td>
-                  <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="loadUserDetails('Jeriebel Calunsag', '123-2343-212')">
-                    View
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Conarco Bayot</td>
-                <td>123-2343-213</td>
-                <td>2025-01-01</td>
-                <td>2025-01-02</td>
-                <td>Pending</td>
-                <td>
-                  <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="loadUserDetails('Conarco Bayot', '123-2343-213')">
-                    View
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Conarco Bading</td>
-                <td>123-2343-213</td>
-                <td>2025-01-01</td>
-                <td>2025-01-02</td>
-                <td>Pending</td>
-                <td>
-                  <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="loadUserDetails('Conarco Bading', '123-2343-213')">
-                    View
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Conarco Bakla</td>
-                <td>123-2343-213</td>
-                <td>2025-01-01</td>
-                <td>2025-01-02</td>
-                <td>Pending</td>
-                <td>
-                  <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="loadUserDetails('Conarco Bakla', '123-2343-213')">
-                    View
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+          <div class="table-responsive">
+              <table class="table table-striped align-middle w-100">
+                  <thead class="table-primary text-center">
+                      <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Student ID</th>
+                          <th scope="col">Date Issued</th>
+                          <th scope="col">Borrow Request</th>
+                          <th scope="col">Return Date</th>
+                          <th scope="col">Action</th>
+                      </tr>
+                  </thead>
+                  <tbody class="text-center">
+                      <tr>
+                          <td>Jeriebel Calunsag</td>
+                          <td>123-2343-212</td>
+                          <td>2025-01-01</td>
+                          <td>2025-01-02</td>
+                          <td><span class="badge bg-warning text-dark">Pending</span></td>
+                          <td>
+                              <button class="btn btn-primary rounded-pill fw-bold px-4 py-2" data-bs-toggle="modal"
+                                  data-bs-target="#detailsModal"
+                                  onclick="loadUserDetails('Jeriebel Calunsag', '123-2343-212')">
+                                  <i class=" "></i> View
+                                  <!-- <i class="fas fa-eye me-1"></i> View -->
+                              </button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Conarco Bayot</td>
+                          <td>123-2343-213</td>
+                          <td>2025-01-01</td>
+                          <td>2025-01-02</td>
+                          <td><span class="badge bg-warning text-dark">Pending</span></td>
+                          <td>
+                              <button class="btn btn-primary rounded-pill fw-bold px-4 py-2" data-bs-toggle="modal"
+                                  data-bs-target="#detailsModal"
+                                  onclick="loadUserDetails('Conarco Bayot', '123-2343-213')">
+                                  <i class=" "></i> View
+                              </button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Conarco Bading</td>
+                          <td>123-2343-214</td>
+                          <td>2025-01-01</td>
+                          <td>2025-01-02</td>
+                          <td><span class="badge bg-warning text-dark">Pending</span></td>
+                          <td>
+                              <button class="btn btn-primary rounded-pill fw-bold px-4 py-2" data-bs-toggle="modal"
+                                  data-bs-target="#detailsModal"
+                                  onclick="loadUserDetails('Conarco Bading', '123-2343-214')">
+                                  <i class=" "></i> View
+                              </button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Conarco Bakla</td>
+                          <td>123-2343-215</td>
+                          <td>2025-01-01</td>
+                          <td>2025-01-02</td>
+                          <td><span class="badge bg-warning text-dark">Pending</span></td>
+                          <td>
+                              <button class="btn btn-primary rounded-pill fw-bold px-4 py-2" data-bs-toggle="modal"
+                                  data-bs-target="#detailsModal"
+                                  onclick="loadUserDetails('Conarco Bakla', '123-2343-215')">
+                                  <i class=" "></i> View
+                              </button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
       </div>
-  
+
       <!-- Footer -->
       <div class="card-footer bg-light text-center text-muted">
-        <small>Ensure all borrow and return details are updated.</small>
+          <small>Ensure all borrow and return details are updated.</small>
       </div>
-    </div>
   </div>
-  
+</div>
+
   
 
 <!-- Modal -->
