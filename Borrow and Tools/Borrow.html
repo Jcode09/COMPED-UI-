@@ -16,7 +16,7 @@
         <div class="sidebar p-3" id="sidebar">
             <!-- <span class="material-symbols-outlined" id="toggleSidebar">dock_to_right</span> -->
             <div class="logo">
-                <img src="images/logo1.png" alt="COMPED Logo" class="logo-img img-fluid">
+                <img src="images/COMPED_LOGO.png" alt="COMPED Logo" class="logo-img img-fluid">
             </div>
             <a href="../Event Home/Event.html" class="menu-item">
                 <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/home/v7/24px.svg" alt="Home" class="menu-icon">
@@ -296,67 +296,73 @@ label.form-label {
             <div class="d-flex flex-column">
                 <div class="mb-4">
                     <h6 class="text-primary">Borrowed Items</h6>
-                    <table class="table table-striped table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">Item Name</th>
-                                <th scope="col">Amount of Items</th>
-                                <th scope="col">Date Issued</th>
-                                <th scope="col">Borrowed Date</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Microcontroller</td>
-                                <td>2</td>
-                                <td>2025-01-01</td>
-                                <td>2025-01-02</td>
-                                <td><span class="badge bg-warning text-dark">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>Breadboard</td>
-                                <td>1</td>
-                                <td>2025-01-02</td>
-                                <td>2025-01-03</td>
-                                <td><span class="badge bg-success">Returned</span></td>
-                            </tr>
-                            <!-- More rows can be added here -->
-                        </tbody>
-                    </table>
+                    <!-- Make the table scrollable horizontally on small screens -->
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Item Name</th>
+                                    <th scope="col">Amount of Items</th>
+                                    <th scope="col">Date Issued</th>
+                                    <th scope="col">Borrowed Date</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Microcontroller</td>
+                                    <td>2</td>
+                                    <td>2025-01-01</td>
+                                    <td>2025-01-02</td>
+                                    <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Breadboard</td>
+                                    <td>1</td>
+                                    <td>2025-01-02</td>
+                                    <td>2025-01-03</td>
+                                    <td><span class="badge bg-success">Returned</span></td>
+                                </tr>
+                                <!-- More rows can be added here -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <hr style="border-top: 5px solid #006eff; margin: 15px 0;">>
+                <hr style="border-top: 5px solid #006eff; margin: 15px 0;">
                 <div>
                     <h6 class="text-primary">Returned Items</h6>
-                    <table class="table table-striped table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">Item Name</th>
-                                <th scope="col">Amount of Items</th>
-                                <th scope="col">Date Issued</th>
-                                <th scope="col">Borrowed Date</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Sensor</td>
-                                <td>1</td>
-                                <td>2025-01-05</td>
-                                <td>2025-01-06</td>
-                                <td><span class="badge bg-success">Returned</span></td>
-                            </tr>
-                            <tr>
-                                <td>Prototyping Tools</td>
-                                <td>3</td>
-                                <td>2025-01-07</td>
-                                <td>2025-01-08</td>
-                                <td><span class="badge bg-warning text-dark">Pending</span></td>
-                            </tr>
-                            <!-- More rows can be added here -->
-                        </tbody>
-                    </table>
+                    <!-- Make the table scrollable horizontally on small screens -->
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Item Name</th>
+                                    <th scope="col">Amount of Items</th>
+                                    <th scope="col">Date Issued</th>
+                                    <th scope="col">Borrowed Date</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sensor</td>
+                                    <td>1</td>
+                                    <td>2025-01-05</td>
+                                    <td>2025-01-06</td>
+                                    <td><span class="badge bg-success">Returned</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Prototyping Tools</td>
+                                    <td>3</td>
+                                    <td>2025-01-07</td>
+                                    <td>2025-01-08</td>
+                                    <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                </tr>
+                                <!-- More rows can be added here -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -365,6 +371,7 @@ label.form-label {
         </div>
     </div>
 </div>
+
 
 
 
