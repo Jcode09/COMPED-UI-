@@ -698,6 +698,17 @@ margin-bottom: 10px;
     color: red;
   }
 
+  .certificate,
+  .links {
+    margin-bottom: 20px;
+  }
+
+  .certificate p,
+  .links p {
+    margin: 5px 0;
+    color: red;
+  }
+
   .links a {
     color: #007bff;
     text-decoration: none;
