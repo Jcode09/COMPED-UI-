@@ -28,8 +28,9 @@ border-bottom-right-radius: 0px;
     margin-right: 10px;
 }
 .sidebar a:hover {
-    background-color: #161b22;
+    background-color: #1759b6;
 }
+
 .sidebar .logo {
     font-size: 24px;
     font-weight: bold;
@@ -329,8 +330,10 @@ box-shadow: none;
     margin-right: 10px;
 }
 .sidebar a:hover {
-    background-color: #161b22;
+    background-color: #1759b6;
+    color: white; 
 }
+
 .sidebar .logo {
     font-size: 24px;
     font-weight: bold;
@@ -402,7 +405,7 @@ transform: scale(1.1);
 }
 
 .menu-item:hover .menu-text {
-color: #007bff; 
+    color: white;
 }
 
 .menu-item:active {
