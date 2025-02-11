@@ -12,7 +12,7 @@
 " rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dock_to_right
 " rel="stylesheet">
-    <link rel="stylesheet" href="course-create.css">
+    <link rel="stylesheet" href="..\E-Learning\assets\css\course-create.css">
     <!-- Inline Styles -->
     <style>
         @media (max-width: 576px) {
@@ -51,7 +51,7 @@
         <div class="sidebar p-3" id="sidebar">
             <span class="material-symbols-outlined" id="toggleSidebar" style="display: none;">dock_to_right</span>
             <div class="logo">
-                <img src="images/logo1.png" alt="COMPED Logo" class="logo-img img-fluid">
+                <img src="../E-Learning/assets/img/COMPED_LOGO.png" alt="COMPED Logo" class="logo-img img-fluid">
             </div>
             <a href="../E-Learning/dashboard.html" class="menu-item">
                 <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/home/v7/24px.svg
@@ -93,72 +93,128 @@
                     <hr style="border-top: 2px solid #0077ff; flex-grow: 1; margin-left: 10px;">
                 </div>
                 <div style="display: flex; align-items: center; justify-content: space-between; text-align: left; margin-top: 2px; margin-bottom: 20px;">
-                    <span style="font-size: 0.875rem; color: #777;">We give your people the skills they need to get to the next level, <br>
-                        with our online elearning courses. And highlight the results the management team needs.</span>
+                    <h3>Update E-Learning Course</h3>
                     <a href="#" onclick="handlePlusClick(); $('#schoolYearModal').modal('show');" style="display: flex; align-items: center;">
                         <img src="https://img.icons8.com/ios-glyphs/30/ellipsis.png"" alt="plus-emoji" class="plus-icon">
                     </a>           
                 </div>
-                
-                <!-- Modal -->
-                <div class="modal fade" id="schoolYearModal" tabindex="-1" aria-labelledby="schoolYearModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <!--<h5 class="modal-title" id="schoolYearModalLabel">Course</h5>-->
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- Course Creation Section -->
+        <div class="create-course-section">
+            
+            <form>
+                <div class="mb-3">
+                    <label for="course-title" class="form-label">Course Title:</label>
+                    <input type="text" class="form-control" id="course-title" placeholder="Enter course title">
+                </div>
+                <div class="mb-3">
+                    <label for="information" class="form-label">Information:</label>
+                    <textarea class="form-control" id="information" rows="3" placeholder="Enter course information"></textarea>
+                </div>
+            </form>
+            <!-- Modernized Four-Box Grid Section -->
+            <div class="container mt-5">
+                <div class="row g-4">
+                    <!-- Lessons Box -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <h6 class="card-title text-center fw-bold mb-3">Lessons</h6>
+                                        <hr>
+                                        <ul class="list-unstyled text-center mb-3">
+                                            <li class="lesson-item">lesson 1.pdf <span class="delete-icon" onclick="removeLesson(this)"><i class="fas fa-times"></i></span></li>
+                                            <li class="lesson-item">lesson 2.pdf <span class="delete-icon" onclick="removeLesson(this)"><i class="fas fa-times"></i></span></li>
+                                            <li class="lesson-item">lesson 3.pdf <span class="delete-icon" onclick="removeLesson(this)"><i class="fas fa-times"></i></span></li>
+                                        </ul>
+                                        <hr>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-outline-primary btn-lg">Add Lessons</a>
+                                    </div>
+                                </div>
                             </div>
-                            
                         </div>
                     </div>
-                </div>
-                <div class="create-course">
-                    <h2>Create Course</h2>
-                  
-                    <label for="course-title">Course Title:</label>
-                    <input type="text" id="course-title" placeholder="Enter course title">
-                  
-                    <label for="information">Information:</label>
-                    <textarea id="information" rows="3" placeholder="Enter course information"></textarea>
-                  
-                    <div class="lessons">
-                      <label>Lessons:</label>
-                      <p>lesson 1.pdf</p>
-                      <p>lesson 2.pdf</p>
-                      <p>lesson 3.pdf</p>
-                      <span class="add-lessons">Add Lessons</span>
+                    <!-- Links Box -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <h6 class="card-title text-center fw-bold mb-3">Links</h6>
+                                        <hr>
+                                        <ul class="list-unstyled text-center">
+                                            <li class="link-item">
+                                                <a href="https://www.youtube.com/watch?v=k-fyNJPDDr4" target="_blank" class="text-decoration-none">
+                                                    https://www.youtube.com/watch?v=k-fyNJPDDr4
+                                                </a>
+                                                <span class="delete-icon" onclick="removeLink(this)">
+                                                    <i class="fas fa-times"></i>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        <hr>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-outline-primary btn-lg">Add Links</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Certificate Box -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <h6 class="card-title text-center fw-bold mb-3">Certificate</h6>
+                                        <hr>
+                                    </div>
+                                    <!-- Added image -->
+                                    <div class="text-center mb-3">
+                                        <img src="../E-Learning/assets/img/coding skillset-2.png" alt="Sample Certificate" class="img-fluid rounded">
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-outline-primary btn-lg">Remove Certificate</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="certificate">
-                        <label>Certificate:</label>
-                        <p>Certificate.pdf</p>
-                        <span class="add-lessons">Remove Certificate</span>
-                      </div>
-                  
-                    <div class="links">
-                      <label>Links:</label>
-                      <p><a href="#">https://www.youtube.com/watch?v=k-fyNJPDDr4</a></p>
-                      <span class="add-links">Add Links</span>
+                    <!-- Questionnaire Box -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <h6 class="card-title text-center fw-bold mb-3">Questionnaire</h6>
+                                        <hr>
+                                    </div>
+                                    <div class="d-grid gap-2">
+                                        <a href="../E-Learning/course-exam-add.html" class="btn btn-info btn-lg">Edit</a>
+                                        <button type="button" class="btn btn-danger btn-lg">Remove</button>
+                                        <!--<button type="button" class="btn btn-info btn-lg text-white">Upload</button>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  
-                    <div class="questionnaire">
-                      <label>Questionnaire:</label>
-                      <div class="questionnaire-buttons">
-                        <button class="btn btn-create">Edit</button>
-                        <button class="btn btn-upload">Upload</button>
-                      </div>
-                    </div>
-                </div>
-                <hr style="border-top: 2px solid #000000; flex-grow: 1; margin: 10px 0;">
-                <div>
-                    <div class="publish-course">
-                      <button>Publish Course</button>
-                    </div>
-                  </div>
-            </div>
+                    <!-- Centered Publish Button -->
+                <div class="text-center mb-3">
+                <button type="button" class="btn btn-primary btn-lg px-4">Publish Course</button>
+            </div>  
         </div>
     </div>
+</div>
     <!-- Scripts -->
+    <script>
+        function removeLesson(element) {
+            element.parentElement.remove();
+        }
+    </script>
     <script>
         function handlePlusClick() {
         }

@@ -12,7 +12,7 @@
 " rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dock_to_right
 " rel="stylesheet">
-    <link rel="stylesheet" href="elearning.css">
+    <link rel="stylesheet" href="..\E-Learning\assets\css\elearning.css">
     <!-- Inline Styles -->
     <style>
         @media (max-width: 576px) {
@@ -51,7 +51,7 @@
         <div class="sidebar p-3" id="sidebar">
             <span class="material-symbols-outlined" id="toggleSidebar" style="display: none;">dock_to_right</span>
             <div class="logo">
-                <img src="images/logo1.png" alt="COMPED Logo" class="logo-img img-fluid">
+                <img src="../E-Learning/assets/img/COMPED_LOGO.png" alt="COMPED Logo" class="logo-img img-fluid">
             </div>
             <a href="../E-Learning/dashboard.html" class="menu-item">
                 <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/home/v7/24px.svg
@@ -108,194 +108,161 @@
                     </div>
                 </div>
                 
-                <!-- Modal -->
+                <!-- New Modal for Choosing Course to Edit -->
+                <div class="modal fade" id="chooseCourseModal" tabindex="-1" aria-labelledby="chooseCourseModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title" id="chooseCourseModalLabel">Choose a Course</h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="mb-3 modal-body-description">Select the course you want to edit.</p>
+                                
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <a href="../E-Learning/course-update.html" class="text-decoration-none">Introduction to Cybersecurity</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="../E-Learning/course-update.html" class="text-decoration-none">Introduction to IoT and Digital Transformation</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="../E-Learning/course-update.html" class="text-decoration-none">Network Basics</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="../E-Learning/course-update.html" class="text-decoration-none">Course Sample</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Existing Modal -->
                 <div class="modal fade" id="schoolYearModal" tabindex="-1" aria-labelledby="schoolYearModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <!--<h5 class="modal-title" id="schoolYearModalLabel">Course</h5>-->
+                                <h2 class="modal-title" id="schoolYearModalLabel">Course</h2>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <h2 class="modal-body-title">Course</h2>
                                 <p class="mb-3 modal-body-description">Create and Update Courses to share with others.</p>
-                            
+                                
                                 <div class="d-grid gap-2">
                                     <button class="btn btn-create" type="button" onclick="window.location.href='../E-Learning/course-create.html'">Create Course</button>
-                                    <button class="btn btn-update" type="button" onclick="window.location.href='../E-Learning/course-update.html'">Update Course</button>
-                                </div>                              
+                                    <button class="btn btn-update" type="button" data-bs-toggle="modal" data-bs-target="#chooseCourseModal">Update Course</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
                 
-                <div class="container">
-                    <!-- First Grid -->
-                    <div class="row row-cols-1 row-cols-md-5 g-4 mb-4">
+                <!-- Bootstrap Card Grid -->
+                <div class="container mt-4">
+                    <div class="row row-cols-1 row-cols-md-4 g-4">
+                        <!-- Card 1 -->
                         <div class="col">
-                            <div class="card" style="width: 100%;">
-                                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="...">
+                            <div class="card h-100 shadow">
+                                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="Cybersecurity">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="../E-Learning/course-page.html" class="text-decoration-none text-dark fw-bold hover-effect">Introduction to Cybersecurity</a>
+                                        <a href="../E-Learning/course-page.html" class="text-decoration-none text-dark fw-bold">Introduction to Cybersecurity</a>
                                     </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the </p>
-                                    <hr class="card-hr">  <!-- Added horizontal rule -->
-                                    <div class="d-flex justify-content-end">
-                                        <a href="#" class="me-2"><i class="fas fa-user fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                        <a href="#"><i class="fas fa-folder fa-lg"></i></a>  <!-- Added fa-lg class -->
+                                    <p class="text-muted mb-2">Course | Self-paced</p>
+                                    <p class="card-text">Explore the exciting field of cybersecurity and why it is a future-proof career.</p>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <div class="ms-auto">
+                                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
+                                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Card 2 -->
                         <div class="col">
-                            <div class="card" style="width: 100%;">
-                                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="...">
+                            <div class="card h-100 shadow">
+                                <img src="assets/img/iot.png" class="card-img-top" alt="IoT">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="../course-page.html" class="text-decoration-none text-dark fw-bold hover-effect">Card title</a>
+                                        <a href="#" class="text-decoration-none text-dark fw-bold">Introduction to IoT and Digital Transformation</a>
                                     </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <hr class="card-hr">  <!-- Added horizontal rule -->
-                                    <div class="d-flex justify-content-end">
-                                        <a href="#" class="me-2"><i class="fas fa-user fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                        <a href="#"><i class="fas fa-folder fa-lg"></i></a>  <!-- Added fa-lg class -->
+                                    <p class="text-muted mb-2">Course | Self-paced</p>
+                                    <p class="card-text">Learn how IoT is transforming the world and creating new opportunities every day.</p>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <div class="ms-auto">
+                                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
+                                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Card 3 -->
                         <div class="col">
-                            <div class="card" style="width: 100%;">
-                                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="...">
+                            <div class="card h-100 shadow">
+                                <img src="assets/img/network.png" class="card-img-top" alt="Network Basics">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="../course-page.html" class="text-decoration-none text-dark fw-bold hover-effect">Card title</a>
+                                        <a href="#" class="text-decoration-none text-dark fw-bold">Network Basics</a>
                                     </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <hr class="card-hr">  <!-- Added horizontal rule -->
-                                    <div class="d-flex justify-content-end">
-                                        <a href="#" class="me-2"><i class="fas fa-user fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                        <a href="#"><i class="fas fa-folder fa-lg"></i></a>  <!-- Added fa-lg class -->
+                                    <p class="text-muted mb-2">Course | Self-paced</p>
+                                    <p class="card-text">Start learning the basics of networking and how computer networks operate.</p>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <div class="ms-auto">
+                                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
+                                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Card 4 -->
                         <div class="col">
-                            <div class="card" style="width: 100%;">
-                                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="...">
+                            <div class="card h-100 shadow">
+                                <img src="assets/img/network.png" class="card-img-top" alt="Network Basics">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="../course-page.html" class="text-decoration-none text-dark fw-bold hover-effect">Card title</a>
+                                        <a href="#" class="text-decoration-none text-dark fw-bold">Sample Course</a>
                                     </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <hr class="card-hr">  <!-- Added horizontal rule -->
-                                    <div class="d-flex justify-content-end">
-                                        <a href="#" class="me-2"><i class="fas fa-user fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                        <a href="#"><i class="fas fa-folder fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                    </div>
+                                    <p class="text-muted mb-2">Course | Self-paced</p>
+                                    <p class="card-text">Just Another Sample Course given for context.</p>
                                 </div>
-                            </div>
-                        </div><div class="col">
-                            <div class="card" style="width: 100%;">
-                                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <a href="../course-page.html" class="text-decoration-none text-dark fw-bold hover-effect">Card title</a>
-                                    </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <hr class="card-hr">  <!-- Added horizontal rule -->
-                                    <div class="d-flex justify-content-end">
-                                        <a href="#" class="me-2"><i class="fas fa-user fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                        <a href="#"><i class="fas fa-folder fa-lg"></i></a>  <!-- Added fa-lg class -->
+                                <div class="card-footer d-flex justify-content-between">
+                                    <div class="ms-auto">
+                                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
+                                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Second Grid -->
-                    <div class="row row-cols-1 row-cols-md-5 g-4 mb-4">
+
+                        <!-- Card 4 -->
                         <div class="col">
-                            <div class="card" style="width: 100%;">
-                                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="...">
+                            <div class="card h-100 shadow">
+                                <img src="assets/img/network.png" class="card-img-top" alt="Network Basics">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="../course-page.html" class="text-decoration-none text-dark fw-bold hover-effect">Card title</a>
+                                        <a href="#" class="text-decoration-none text-dark fw-bold">Sample Course</a>
                                     </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <hr class="card-hr">  <!-- Added horizontal rule -->
-                                    <div class="d-flex justify-content-end">
-                                        <a href="#" class="me-2"><i class="fas fa-user fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                        <a href="#"><i class="fas fa-folder fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                    </div>
+                                    <p class="text-muted mb-2">Course | Self-paced</p>
+                                    <p class="card-text">Just Another Sample Course given for context.</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card" style="width: 100%;">
-                                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <a href="../course-page.html" class="text-decoration-none text-dark fw-bold hover-effect">Card title</a>
-                                    </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <hr class="card-hr">  <!-- Added horizontal rule -->
-                                    <div class="d-flex justify-content-end">
-                                        <a href="#" class="me-2"><i class="fas fa-user fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                        <a href="#"><i class="fas fa-folder fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card" style="width: 100%;">
-                                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <a href="../course-page.html" class="text-decoration-none text-dark fw-bold hover-effect">Card title</a>
-                                    </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <hr class="card-hr">  <!-- Added horizontal rule -->
-                                    <div class="d-flex justify-content-end">
-                                        <a href="#" class="me-2"><i class="fas fa-user fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                        <a href="#"><i class="fas fa-folder fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card" style="width: 100%;">
-                                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <a href="../course-page.html" class="text-decoration-none text-dark fw-bold hover-effect">Card title</a>
-                                    </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <hr class="card-hr">  <!-- Added horizontal rule -->
-                                    <div class="d-flex justify-content-end">
-                                        <a href="#" class="me-2"><i class="fas fa-user fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                        <a href="#"><i class="fas fa-folder fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div><div class="col">
-                            <div class="card" style="width: 100%;">
-                                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <a href="../course-page.html" class="text-decoration-none text-dark fw-bold hover-effect">Card title</a>
-                                    </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <hr class="card-hr">  <!-- Added horizontal rule -->
-                                    <div class="d-flex justify-content-end">
-                                        <a href="#" class="me-2"><i class="fas fa-user fa-lg"></i></a>  <!-- Added fa-lg class -->
-                                        <a href="#"><i class="fas fa-folder fa-lg"></i></a>  <!-- Added fa-lg class -->
+                                <div class="card-footer d-flex justify-content-between">
+                                    <div class="ms-auto">
+                                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
+                                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>

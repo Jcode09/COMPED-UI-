@@ -11,7 +11,7 @@
 " rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dock_to_right
 " rel="stylesheet">
-    <link rel="stylesheet" href="course-exam.css">
+    <link rel="stylesheet" href="..\E-Learning\assets\css\course-exam.css">
     <!-- Inline Styles -->
     <style>
         @media (max-width: 576px) {
@@ -50,7 +50,7 @@
         <div class="sidebar p-3" id="sidebar">
             <span class="material-symbols-outlined" id="toggleSidebar" style="display: none;">dock_to_right</span>
             <div class="logo">
-                <img src="images/logo1.png" alt="COMPED Logo" class="logo-img img-fluid">
+                <img src="../E-Learning/assets/img/COMPED_LOGO.png" alt="COMPED Logo" class="logo-img img-fluid">
             </div>
             <a href="../E-Learning/dashboard.html" class="menu-item">
                 <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/home/v7/24px.svg
@@ -94,11 +94,66 @@
                 <div style="text-align: left; margin-top: 2px;">
                     <span style="font-size: 0.875rem; color: #777;">Explore the exciting field of cybersecurity and why cybersecurity is a future-proof career.</span>
                 </div>
+                
+                <!--Put Code here to create quiz UI-->
+                <div class="container mt-4">
+                    <h2>Quiz Builder</h2>
+                    <input type="text" id="quizTitle" class="form-control mb-2" placeholder="Quiz Title">
+                    <textarea id="quizDescription" class="form-control mb-3" placeholder="Quiz Description"></textarea>
+                    
+                    <div id="questionsContainer"></div>
+                    
+                    <button class="btn btn-primary mt-3" onclick="addQuestion()">Add Question</button>
+                </div>
 
             </div>
         </div>
     </div>
     <!-- Scripts -->
+    <script>
+        let questionCount = 0;
+        
+        function addQuestion() {
+            questionCount++;
+            const questionHTML = `
+                <div class="card mb-3 p-3" id="question-${questionCount}">
+                    <input type="text" class="form-control mb-2" placeholder="Question">
+                    <select class="form-select mb-2">
+                        <option value="multiple-choice">Multiple Choice</option>
+                    </select>
+                    <div id="options-${questionCount}">
+                        <div class="d-flex align-items-center mb-2">
+                            <input type="radio" name="correct-${questionCount}">
+                            <input type="text" class="form-control mx-2" placeholder="Option 1">
+                            <button class="btn btn-danger btn-sm" onclick="removeOption(this)">X</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" onclick="addOption(${questionCount})">Add Option</button>
+                    <button class="btn btn-danger btn-sm float-end" onclick="removeQuestion(${questionCount})">Remove Question</button>
+                </div>
+            `;
+            document.getElementById("questionsContainer").insertAdjacentHTML("beforeend", questionHTML);
+        }
+        
+        function addOption(questionId) {
+            const optionHTML = `
+                <div class="d-flex align-items-center mb-2">
+                    <input type="radio" name="correct-${questionId}">
+                    <input type="text" class="form-control mx-2" placeholder="Option">
+                    <button class="btn btn-danger btn-sm" onclick="removeOption(this)">X</button>
+                </div>
+            `;
+            document.getElementById(`options-${questionId}`).insertAdjacentHTML("beforeend", optionHTML);
+        }
+        
+        function removeOption(button) {
+            button.parentElement.remove();
+        }
+        
+        function removeQuestion(questionId) {
+            document.getElementById(`question-${questionId}`).remove();
+        }
+        </script>
     <script>
         document.querySelectorAll(".module-header").forEach((header) => {
           header.addEventListener("click", () => {
