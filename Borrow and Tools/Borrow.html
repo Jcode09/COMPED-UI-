@@ -54,7 +54,7 @@
                     <div>
                         <h3>COMPED</h3>
                         <p>Borrowing and Inventory</p>
-                        <button class="schedule-button btn btn-primary rounded-pill mt-3">View Borrowed and Returned</button>
+                        <button class="schedule-button btn btn-primary rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#historyModal">View Borrowed and Returned</button>
                     </div>
                     <div>
                         <img src="images/arduino.png" alt="Hero Image">
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="previous-card">
-                    <h5 class="mb-4">Borrow Tools</h5>
+                    <h5 class="mb-4">Borrow Tools and Equipments</h5>
                     <div class="d-flex flex-wrap gap-3">
                         <!-- Microcontrollers Card -->
                         <div class="card shadow-sm border rounded" style="width: 18rem;">
@@ -73,9 +73,14 @@
                             <div class="card-body">
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
-                            <div class="card-footer bg-white text-center">
-                                <a href=" " class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2">View Tools</a>
-                            </div>
+                            <!-- View Tools Button -->
+<div class="card-footer bg-white text-center">
+   <!-- Button to trigger the modal -->
+<button type="button" class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#borrowingModal">
+  View Tools
+</button>
+
+</div>
                         </div>
                 
                         <!-- Prototyping Tools Card -->
@@ -88,7 +93,10 @@
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                             <div class="card-footer bg-white text-center">
-                                <a href=" " class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2">View Tools</a>
+                                <!-- Button to trigger the modal -->
+                             <button type="button" class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#borrowingModal">
+                               View Tools
+                             </button>
                             </div>
                         </div>
                 
@@ -102,105 +110,111 @@
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                             <div class="card-footer bg-white text-center">
-                                <a href=" " class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2">View Tools</a>
+                                <!-- Button to trigger the modal -->
+                             <button type="button" class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#borrowingModal">
+                               View Tools
+                             </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 
 
-  <!-- Borrowing and Item Collection Box -->
-<div class="box-container mt-5">
-    <div class="row">
-
-        <div class="col-md-6">
-            <div class="borrowing-form-box p-3 border rounded shadow-sm">
-  
-                <div class="card-header bg-primary text-white text-center py-4 rounded-top">
-                    <h3 class="mb-0">Borrowing Form</h3>
-                </div>
-                <hr style="border-top: 5px solid #006eff; margin: 15px 0;"> 
-                <form>
-                    <div class="mb-3">
-                        <label for="userId" class="form-label">User ID</label>
-                        <input type="text" class="form-control" id="userId" placeholder="Enter User ID">
+ <!-- Borrowing and Item Collection Modal -->
+<div class="modal fade" id="borrowingModal" tabindex="-1" aria-labelledby="borrowingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h3 class="modal-title" id="borrowingModalLabel">Borrowing and Item Collection</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="borrowing-form-box p-3 border rounded shadow-sm">
+                            <h4 class="text-center">Borrowing Form</h4>
+                            <hr>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="userId" class="form-label">User ID</label>
+                                    <input type="text" class="form-control" id="userId" placeholder="Enter User ID">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="borrowerName" class="form-label">Borrower Name</label>
+                                    <input type="text" class="form-control" id="borrowerName" placeholder="Enter Borrower's Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="schoolId" class="form-label">School ID</label>
+                                    <input type="text" class="form-control" id="schoolId" placeholder="Enter School ID">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="dateIssued" class="form-label">Date Issued</label>
+                                    <input type="date" class="form-control" id="dateIssued">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="returnDate" class="form-label">Return Date</label>
+                                    <input type="date" class="form-control" id="returnDate">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="borrowItems" class="form-label">Borrowed Items</label>
+                                    <table class="table table-bordered" id="borrowedItemsTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Item Name</th>
+                                                <th>Quantity</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                                <button type="submit" class="btn btn-primary rounded-pill w-100">Borrow</button>
+                            </form>
+                            <div class="text-center mt-2">
+                                <small class="text-muted">Please fill out the form to borrow items.</small>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="borrowerName" class="form-label">Borrower Name</label>
-                        <input type="text" class="form-control" id="borrowerName" placeholder="Enter Borrower's Name">
+                    <div class="col-md-6">
+                        <div class="item-collection-box p-3 border rounded shadow-sm">
+                            <h4 class="text-center">Item Collection</h4>
+                            <hr>
+                            <div class="d-flex justify-content-center flex-wrap">
+                                <div class="card shadow-sm border rounded m-2" style="width: 10rem;">
+                                    <img src="images/arduinouno.png" class="card-img-top" alt="Microcontroller">
+                                    <div class="card-body">
+                                        <p class="card-text text-center">Microcontroller</p>
+                                        <button class="btn btn-primary rounded-pill w-100" onclick="highlightCard(this, 'Microcontroller')">Select</button>
+                                    </div>
+                                </div>
+                                <div class="card shadow-sm border rounded m-2" style="width: 10rem;">
+                                    <img src="images/breadboard.png" class="card-img-top" alt="Breadboard">
+                                    <div class="card-body">
+                                        <p class="card-text text-center">Breadboard</p>
+                                        <button class="btn btn-primary rounded-pill w-100" onclick="highlightCard(this, 'Breadboard')">Select</button>
+                                    </div>
+                                </div>
+                                <div class="card shadow-sm border rounded m-2" style="width: 10rem;">
+                                    <img src="images/ultrasonic.png" class="card-img-top" alt="Sensor">
+                                    <div class="card-body">
+                                        <p class="card-text text-center">Sensor</p>
+                                        <button class="btn btn-primary rounded-pill w-100" onclick="highlightCard(this, 'Sensor')">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2">
+                                <small class="text-muted">Select and collect the items listed.</small>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="schoolId" class="form-label">School ID</label>
-                        <input type="text" class="form-control" id="schoolId" placeholder="Enter School ID">
-                    </div>
-                    <div class="mb-3">
-                        <label for="dateIssued" class="form-label">Date Issued</label>
-                        <input type="date" class="form-control" id="dateIssued">
-                    </div>
-                    <div class="mb-3">
-                        <label for="returnDate" class="form-label">Return Date</label>
-                        <input type="date" class="form-control" id="returnDate">
-                    </div>
-                    <div class="mb-3">
-                        <label for="borrowItems" class="form-label">Borrowed Items</label>
-                        <table class="table table-bordered" id="borrowedItemsTable">
-                            <thead>
-                                <tr>
-                                    <th>Item Name</th>
-                                    <th>Quantity</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            
-                            </tbody>
-                        </table>
-                    </div>
-                    <button type="submit" class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2">Borrow</button>
-                </form>
-            
-                <div class="card-footer text-center">
-                    <small class="text-muted">Please fill out the form to borrow items.</small>
                 </div>
             </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="item-collection-box p-3 border rounded shadow-sm">
-                <div class="card-header bg-primary text-white text-center py-4 rounded-top">
-                    <h3 class="mb-0">Item Collection</h3>
-                </div>
-                <hr style="border-top: 5px solid #006eff; margin: 15px 0;">
-                <div class="d-flex justify-content-center flex-wrap">
-                    <div class="card shadow-sm border rounded m-2" style="width: 10rem;">
-                        <img src="images/arduinouno.png" class="card-img-top" alt="Microcontroller">
-                        <div class="card-body">
-                            <p class="card-text text-center">Microcontroller</p>
-                            <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2 w-100" onclick="highlightCard(this, 'Microcontroller')">Select</button>
-                        </div>
-                    </div>
-                    <div class="card shadow-sm border rounded m-2" style="width: 10rem;">
-                        <img src="images/breadboard.png" class="card-img-top" alt="Breadboard">
-                        <div class="card-body">
-                            <p class="card-text text-center">Breadboard</p>
-                            <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2 w-100" onclick="highlightCard(this, 'Breadboard')">Select</button>
-                        </div>
-                    </div>
-                    <div class="card shadow-sm border rounded m-2" style="width: 10rem;">
-                        <img src="images/ultrasonic.png" class="card-img-top" alt="Sensor">
-                        <div class="card-body">
-                            <p class="card-text text-center">Sensor</p>
-                            <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2 w-100" onclick="highlightCard(this, 'Sensor')">Select</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Footer -->
-                <div class="card-footer text-center">
-                    <small class="text-muted">Select and collect the items listed.</small>
-                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <style>
@@ -286,26 +300,27 @@ label.form-label {
 
     
 
-<!-- Borrowed and Returned Items History Box -->
-<div class="box-container mt-5 p-4 border rounded shadow-sm">
-    <div class="card">
-        <div class="card-header bg-primary text-white text-center py-4 rounded-top">
-            <h5 class="mb-0">Borrowed and Returned Items</h5>
-        </div>
-        <div class="card-body">
-            <div class="d-flex flex-column">
+
+<!-- Modal -->
+<div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="historyModalLabel">Borrowed and Returned Items</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
                 <div class="mb-4">
                     <h6 class="text-primary">Borrowed Items</h6>
-                    <!-- Make the table scrollable horizontally on small screens -->
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">Item Name</th>
-                                    <th scope="col">Amount of Items</th>
-                                    <th scope="col">Date Issued</th>
-                                    <th scope="col">Borrowed Date</th>
-                                    <th scope="col">Status</th>
+                                    <th>Item Name</th>
+                                    <th>Amount of Items</th>
+                                    <th>Date Issued</th>
+                                    <th>Borrowed Date</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -323,25 +338,22 @@ label.form-label {
                                     <td>2025-01-03</td>
                                     <td><span class="badge bg-success">Returned</span></td>
                                 </tr>
-                                <!-- More rows can be added here -->
                             </tbody>
                         </table>
                     </div>
                 </div>
-
                 <hr style="border-top: 5px solid #006eff; margin: 15px 0;">
                 <div>
                     <h6 class="text-primary">Returned Items</h6>
-                    <!-- Make the table scrollable horizontally on small screens -->
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">Item Name</th>
-                                    <th scope="col">Amount of Items</th>
-                                    <th scope="col">Date Issued</th>
-                                    <th scope="col">Borrowed Date</th>
-                                    <th scope="col">Status</th>
+                                    <th>Item Name</th>
+                                    <th>Amount of Items</th>
+                                    <th>Date Issued</th>
+                                    <th>Borrowed Date</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -359,18 +371,18 @@ label.form-label {
                                     <td>2025-01-08</td>
                                     <td><span class="badge bg-warning text-dark">Pending</span></td>
                                 </tr>
-                                <!-- More rows can be added here -->
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card-footer text-center">
-            <small class="text-muted">This table shows the history of borrowed and returned items.</small>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>
+
 
 
 
