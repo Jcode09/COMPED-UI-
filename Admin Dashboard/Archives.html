@@ -83,6 +83,12 @@
                 <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" onclick="showTable('eventsTable')">Events</button>
                 <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" onclick="showTable('inventoryTable')">Inventory</button>
                 <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" onclick="showTable('usersTable')">Users</button> <!-- New Button -->
+                <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" onclick="showTable('historyTable')">History</button>
+            </div>
+
+            <div id="historyButtons" class="d-none text-center mb-3">
+                <button class="btn btn-secondary rounded-pill fw-bold border border-2 px-4 py-2" onclick="showHistory('inventoryHistory')">Inventory History</button>
+                <button class="btn btn-secondary rounded-pill fw-bold border border-2 px-4 py-2" onclick="showHistory('paymentHistory')">Payment History</button>
             </div>
 
             <!-- Payments Table -->
@@ -192,8 +198,56 @@
                     </tbody>
                 </table>
             </div>
+        
+                 
+    
+                <!-- History Table -->
+                <div id="historyTable" class="d-none">
+                    <div id="inventoryHistory" class="table-responsive d-none">
+                        <table class="table table-striped text-center">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Info</th>
+                                    <th>Date</th>
+                                    <th>Message</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Item Restocked</td>
+                                    <td>02-14-25</td>
+                                    <td>Restocked 10 units</td>
+                                    <td>Approved</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <div id="paymentHistory" class="table-responsive d-none">
+                        <table class="table table-striped text-center">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Info</th>
+                                    <th>Date</th>
+                                    <th>Message</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Payment Received</td>
+                                    <td>02-14-25</td>
+                                    <td>₱500 credited</td>
+                                    <td>Success</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
         </div>
+
+        
 
         <!-- Footer -->
         <div class="card-footer bg-light text-center text-muted">
@@ -223,7 +277,7 @@
     </div>
 </div>
 
-
+ 
 <!-- JavaScript for Table Switching & Delete Confirmation -->
 <script>
    function showTable(tableId) {
@@ -233,6 +287,25 @@
     document.getElementById('usersTable').classList.add('d-none'); // Hide Users Table
     document.getElementById(tableId).classList.remove('d-none');
 }
+
+function showTable(tableId) {
+        let tables = ['paymentsTable', 'eventsTable', 'inventoryTable', 'usersTable', 'historyTable'];
+        tables.forEach(id => document.getElementById(id).classList.add('d-none'));
+        document.getElementById(tableId).classList.remove('d-none');
+
+        if (tableId === 'historyTable') {
+            document.getElementById('historyButtons').classList.remove('d-none');
+        } else {
+            document.getElementById('historyButtons').classList.add('d-none');
+        }
+    }
+
+    function showHistory(historyId) {
+        let historyTables = ['inventoryHistory', 'paymentHistory'];
+        historyTables.forEach(id => document.getElementById(id).classList.add('d-none'));
+        document.getElementById(historyId).classList.remove('d-none');
+    }
+
 
 function confirmDelete(button) {
     let deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
