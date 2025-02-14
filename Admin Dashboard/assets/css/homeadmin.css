@@ -1312,3 +1312,61 @@ body {
 
 
 
+@media (max-width: 480px) {
+  .text-primary {
+      font-size: 16px;
+  }
+/*
+  .timer {
+      font-size: 20px;
+  }
+
+  .small-card {
+      width: 100%; 
+      text-align: center;
+  } */
+}
+
+@media (max-width: 768px) {
+  .scene {
+      transform: scale(0.8); /* Shrink the entire scene */
+  }
+
+  .tree {
+      transform: scale(0.9);
+  }
+
+  .tent {
+      width: 60%;
+  }
+
+  .fireplace {
+      transform: scale(0.8);
+  }
+
+  .time-wrapper {
+      transform: scale(0.9);
+  }
+}
+
+@media (max-width: 480px) {
+  .scene {
+      transform: scale(0.6);
+  }
+
+  .tent {
+      width: 80%;
+  }
+
+  .tree {
+      transform: scale(0.7);
+  }
+
+  .fireplace {
+      transform: scale(0.7);
+  }
+
+  .time-wrapper {
+      transform: scale(0.8);
+  }
+}
