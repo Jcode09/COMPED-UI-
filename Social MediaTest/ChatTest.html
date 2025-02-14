@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dock_to_right" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="smtest.css">
+</head>
+<body>
+    <div class="d-flex flex-wrap">
+        <div class="sidebar p-3" id="sidebar">
+            <!-- <span class="material-symbols-outlined" id="toggleSidebar">dock_to_right</span> -->
+            <div class="logo">
+                <img src="images/COMPED_LOGO.png" alt="COMPED Logo" class="logo-img img-fluid">
+            </div>
+            <a href="SMTest.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/home/v7/24px.svg" alt="Home" class="menu-icon">
+                <span class="menu-text">Home</span>
+            </a>
+            <a href="ChatTest.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/message/v7/24px.svg" alt="Messaging" class="menu-icon">
+                <span class="menu-text">Messaging</span>
+            </a>
+            <a href="../Event Home/Event.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/event/v7/24px.svg" alt="Events" class="menu-icon">
+                <span class="menu-text">Event Management</span>
+            </a>
+            <a href="../ELearning/ELearning.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/book/v7/24px.svg" alt="E-Learning" class="menu-icon">
+                <span class="menu-text">E-Learning</span>
+            </a>
+        </div>
+    </div>
+    
+
+        <div class="content-wrapper flex-grow-1 container-fluid">
+            <div class="main-content">
+                <div class="d-flex flex-wrap align-items-center mb-4">
+                    <div class="search w-100">
+                        <input placeholder="Search..." type="text" class="form-control">
+                      <!--  <button type="submit" class="btn btn-primary mt-2">Go</button> -->
+                    </div>
+                </div>
+                <hr style="border-top: 5px solid #006eff; margin: 15px 0;"> 
+
+
+                <!-- Mobile Tabs for Switching Columns -->
+<div class="d-md-none text-center mb-3">
+    <button class="btn btn-primary me-2" id="firstColumnTab">Chatbox</button>
+    <button class="btn btn-secondary" id="secondColumnTab">Messages</button>
+</div>
+
+                <div class="container-fluid min-vh-100 d-flex flex-column">
+                    <div class="row flex-grow-1">
+                        <!-- First Column: Followers, Post Creation, and Interaction -->
+                        <div class="col-md-8">
+                            <!-- Social media area (Followers) -->
+                            <div class="social-media-area mb-4" style="border-color: rgb(255, 255, 255); background-color: white;">
+                                <h5>Followers</h5>
+                                <!-- Row of profile circles -->
+                                <div class="row mb-4 overflow-auto justify-content-start">
+                                    <div class="col-auto">
+                                        <img src="images/profile.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 1">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/profileme.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 2">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/kenneth.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 3">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/friend1.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 4">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/profile.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 5">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/profileme.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 6">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/friend1.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 7">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/kenneth.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 8">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/profile.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 9">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/profileme.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 10">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/kenneth.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 11">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/friend1.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 12">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/profileme.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 13">
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="images/kenneth.jpg" class="profile-img rounded-circle img-fluid border border-primary" alt="Profile 14">
+                                    </div>
+                                </div>
+                            </div>
+<style>
+   .social-media-area .profile-img {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+}
+
+@media (max-width: 768px) {
+    .social-media-area .row {
+        flex-wrap: nowrap;
+        overflow-x: scroll; /* Enable horizontal scrolling */
+    }
+    .social-media-area .col-auto {
+        flex: 0 0 auto;
+    }
+}
+
+</style>
+
+
+
+<!-- Chatbox Container -->
+<div class="chatbox-container mb-4 p-4 border border-2 rounded-4 shadow-sm bg-white w-100">
+    <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+        <h5 class="mb-0 text-primary">Chat with Jebel Bulac</h5>
+        <button class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="chatbox-messages p-3 border rounded bg-white" style="height: 350px; overflow-y: auto;">
+        <!-- Example Messages -->
+        <div class="d-flex align-items-center mb-3">
+            <img src="images/profileme.jpg" class="rounded-circle me-2" width="45" alt="Profile Image">
+            <div class="bg-light shadow-sm p-3 rounded-3">
+                <strong class="text-dark">Jebel Bulac</strong>
+                <p class="mb-0 text-muted">Hey! How's your day?</p>
+                <small class="text-muted">10:30 AM</small>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-end mb-3">
+            <div class="bg-primary text-white shadow-sm p-3 rounded-3 text-end">
+                <strong>You</strong>
+                <p class="mb-0">I'm good! How about you?</p>
+                <small class="text-white-50">10:32 AM</small>
+            </div>
+            <img src="images/profile.jpg" class="rounded-circle ms-2" width="45" alt="Your Profile Image">
+        </div>
+    </div>
+    <div class="mt-3 d-flex align-items-center gap-2">
+        <textarea class="form-control rounded-pill p-2" rows="1" placeholder="Type a message..." style="flex: 1; resize: none;"></textarea>
+        <button class="btn btn-primary rounded-circle px-3 py-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+</div>
+
+
+
+
+<!-- Second Column: Recent Conversations & Job Opportunities -->
+<div class="col-md-4 d-flex flex-column">
+    <div class="recent-conversations mb-2">
+        <h5 class="mb-3">Messages</h5>
+
+        <!-- Conversation 1 -->
+        <div class="d-flex align-items-center mb-3">
+            <img src="images/profileme.jpg" class="rounded-circle me-3" width="40" alt="Profile Image">
+            <div class="flex-grow-1">
+                <h6 class="mb-1">Jebel Bulac</h6>
+                <p class="text-muted mb-0">"Hey! How's your day?"</p>
+                <small class="text-muted">Today • 10:30 AM</small>
+            </div>
+        </div>
+
+        <hr style="border-top: 2px solid #9e9e9e; margin: 15px 0;">
+
+        <!-- Conversation 2 -->
+        <div class="d-flex align-items-center mb-3">
+            <img src="images/kenneth.jpg" class="rounded-circle me-3" width="40" alt="Profile Image">
+            <div class="flex-grow-1">
+                <h6 class="mb-1">Kenneth Oval</h6>
+                <p class="text-muted mb-0">"Let's catch up soon!"</p>
+                <small class="text-muted">Yesterday • 3:20 PM</small>
+            </div>
+        </div>
+
+        <hr style="border-top: 2px solid #9e9e9e; margin: 15px 0;">
+
+        <!-- Conversation 3 -->
+        <div class="d-flex align-items-center mb-3">
+            <img src="images/friend1.jpg" class="rounded-circle me-3" width="40" alt="Profile Image">
+            <div class="flex-grow-1">
+                <h6 class="mb-1">Conarco Bayot</h6>
+                <p class="text-muted mb-0">"I sent the files. Check your email!"</p>
+                <small class="text-muted">Monday • 10:15 AM</small>
+            </div>
+        </div>
+
+        <hr style="border-top: 2px solid #9e9e9e; margin: 15px 0;">
+
+        <!-- Conversation 4 -->
+        <div class="d-flex align-items-center mb-3">
+            <img src="images/kyle.jpg" class="rounded-circle me-3" width="40" alt="Profile Image">
+            <div class="flex-grow-1">
+                <h6 class="mb-1">Kyle Grapa</h6>
+                <p class="text-muted mb-0">"Thanks for the help today!"</p>
+                <small class="text-muted">Sunday • 8:30 PM</small>
+            </div>
+        </div>
+
+        <hr style="border-top: 2px solid #9e9e9e; margin: 15px 0;">
+
+        <!-- Conversation 5 -->
+        <div class="d-flex align-items-center mb-3">
+            <img src="images/default.png" class="rounded-circle me-3" width="40" alt="Profile Image">
+            <div class="flex-grow-1">
+                <h6 class="mb-1">Don Allen</h6>
+                <p class="text-muted mb-0">"See you at the event!"</p>
+                <small class="text-muted">Saturday • 2:05 PM</small>
+            </div>
+        </div>
+    </div>
+
+    <hr style="border-top: 3px solid #006eff; margin: 15px 0;">
+</div>
+</div>
+
+
+
+
+<div class="right-sidebar">
+    <div class="user-info">
+        <a href="ProfileTest.html">
+            <img src="images/profile.jpg" alt="Profile Image">
+        </a>                     
+        <div>
+            <h5>Jeriebel Calunsag</h5>
+            <p>Online</p>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+document.getElementById("firstColumnTab").addEventListener("click", function() {
+    document.querySelector(".col-md-8").style.display = "block";
+    document.querySelector(".col-md-4").style.display = "none";
+});
+
+document.getElementById("secondColumnTab").addEventListener("click", function() {
+    document.querySelector(".col-md-8").style.display = "none";
+    document.querySelector(".col-md-4").style.display = "block";
+});
+
+
+    </script>
+</body>
+</html>
+
+
