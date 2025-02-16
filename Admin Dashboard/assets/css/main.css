@@ -723,4 +723,49 @@ footer {
 }
 
 
+/*Attendance RFID System
 
+/* Improve form input fields */
+.form-control {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Card styling */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Profile image container */
+.profile-container {
+    border: 2px solid #dee2e6;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 369px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .profile-container {
+        width: 100%;
+        height: auto;
+    }
+    .form-control {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+.rfid-header {
+    background: linear-gradient(135deg, #005f73, #0077ff);
+    color: white;
+    /*border-radius: 10px;*/
+    margin-bottom: 20px;
+}
