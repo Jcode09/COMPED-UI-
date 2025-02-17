@@ -774,8 +774,8 @@ footer {
 }
 
 .body-bg{
-    background-color: #dbdbdb !important;
-    background: linear-gradient(135deg, #d8d8d8, #a5a5a5);
+    background-color: #102951 !important;
+    /*background: linear-gradient(135deg, #d8d8d8, #a5a5a5);
     /*overflow: hidden;*/
 }
 

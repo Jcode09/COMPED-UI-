@@ -869,3 +869,34 @@ hr {
     background-color: var(--bs-btn-hover-bg);
     border-color: var(--bs-btn-hover-border-color);
   }
+
+  /* Add border radius for buttons */
+  .rounded-btn {
+    border-radius: 5px !important;
+}
+
+/* Space between modules */
+.module {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 576px) {
+    .title {
+        display: none; /* Hide the full month name */
+    }
+    .short-title {
+        display: inline; /* Show the shortened month name */
+        font-family: inherit; /* Use the same font as .title */
+        font-weight: bold; /* Maintain bold styling from .title */
+        font-size: inherit; /* Use the same font size as .title */
+        color: #0077ff;
+    }
+}
+@media (min-width: 577px) {
+    .title {
+        display: inline; /* Show the full month name */
+    }
+    .short-title {
+        display: none; /* Hide the shortened month name */
+    }
+}
