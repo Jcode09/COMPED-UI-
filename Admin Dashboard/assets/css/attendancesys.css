@@ -775,8 +775,11 @@ footer {
 
 .body-bg{
     background-color: #dbdbdb !important;
+    background: linear-gradient(135deg, #d8d8d8, #a5a5a5);
+    /*overflow: hidden;*/
 }
 
 .bg-attendanceCustom{
     background-color: #03699b;
 }
+
