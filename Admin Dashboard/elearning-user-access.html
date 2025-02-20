@@ -108,7 +108,65 @@
     <div class="card shadow border-0">
         <!-- Header -->
         <div class="card-header bg-primary text-white text-center">
-            <h5 class="mb-0">User Access</h5>
+            <h5 class="mb-0">User Access
+                <i class="fas fa-plus-circle" data-bs-toggle="modal" data-bs-target="#e-learning-add-modal" style="cursor: pointer; color: #fff; font-size: 24px; margin-left: 10px;"></i>
+            </h5>
+        </div>
+
+        <!-- Modal for Student Officers -->
+        <div class="modal fade" id="e-learning-add-modal" tabindex="-1" aria-labelledby="studentOfficerModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content rounded-3 shadow-lg">
+                    <!-- Modal Header -->
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="studentOfficerModalLabel">E-Learning Management</h5>
+                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!-- Modal Body -->
+                    <div class="modal-body">
+                        <!-- Table Content -->
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Student ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Year Level</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2023001</td>
+                                    <td>Bayot Conarco</td>
+                                    <td>4th Year</td>
+                                    <td>
+                                        <button class="btn btn-success rounded-pill fw-bold border border-2 px-4 py-2">Add</button>
+                                        <button class="btn btn-danger rounded-pill fw-bold border border-2 px-4 py-2">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2023002</td>
+                                    <td>Conarco</td>
+                                    <td>8th Year</td>
+                                    <td>
+                                        <button class="btn btn-success rounded-pill fw-bold border border-2 px-4 py-2">Add</button>
+                                        <button class="btn btn-danger rounded-pill fw-bold border border-2 px-4 py-2">Delete</button>
+                                    </td>
+                                </tr>
+                                <!-- Additional rows can be added dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2">Save
+                            changes</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Body -->
@@ -156,9 +214,6 @@
         </div>
     </div>
 </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Modals -->
 

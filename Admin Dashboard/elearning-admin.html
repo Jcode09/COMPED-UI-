@@ -102,60 +102,175 @@
                     <span style="font-size: 1.75rem; font-weight: bold; white-space: nowrap;">E-learning Admin</span>
                     <hr style="border-top: 2px solid #0077ff; flex-grow: 1; margin-left: 10px;">
                 </div>
-                <div style="display: flex; align-items: center; justify-content: space-between; text-align: left; margin-top: 2px; margin-bottom: 20px;">
-                    <span style="font-size: 0.875rem; color: #777;">
-                        We give your people the skills they need to get to the next level, <br>
-                        with our online elearning courses. And highlight the results the management team needs.
-                    </span>
-                    <div style="display: flex; align-items: center;">
-                        <!--
-                        <button class="btn btn-outline-secondary me-2" onclick="handleBackClick();">
-                            <i class="fas fa-arrow-left"></i>
-                        </button>
-                        -->
-                        <button class="btn btn-outline-secondary me-2" onclick="window.location.href='elearning-user-access.html';">
-                            <i class="fas fa-user"></i>
-                        </button>                        
-                        <button class="btn btn-primary" onclick="handlePlusClick(); $('#schoolYearModal').modal('show');">
-                            <i class="fas fa-plus"></i>
-                        </button>
+                
+
+                <div class="container-fluid mt-4">
+                    <div class="card shadow border-0">
+                        <!-- Header -->
+                        <div class="card-header bg-primary text-white text-center">
+                            <h5 class="mb-0">Course Management</h5>
+                        </div>
+
+                        <!-- Toolbar -->
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div></div>
+                                <div>
+                                    <!-- Add Course Button -->
+                                    <button class="btn btn-primary" onclick="window.location.href='../E-Learning/course-create.html'">
+                                        <i class="fas fa-plus"></i> Add Course
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <!-- Tabs for Approved & Unapproved Courses -->
+                            <ul class="nav nav-tabs" id="courseTabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#approvedCourses">Approved Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#unapprovedCourses">Unapproved Courses</a>
+                                </li>
+                            </ul>
+                
+                            <div class="tab-content mt-3">
+                                <!-- Approved Courses -->
+                                <div class="tab-pane fade show active" id="approvedCourses">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Course Name</th>
+                                                    <th>Active Students</th>
+                                                    <th>Completed</th>
+                                                    <th>Unenrolled</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Introduction to Cybersecurity</td>
+                                                    <td>25</td>
+                                                    <td>10</td>
+                                                    <td>2</td>
+                                                    <td>
+                                                        <button class="btn btn-info btn-sm" onclick="viewStudents('Introduction to Cybersecurity')">
+                                                            <i class="fas fa-users"></i> View
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Network Basics</td>
+                                                    <td>15</td>
+                                                    <td>5</td>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <button class="btn btn-info btn-sm" onclick="viewStudents('Network Basics')">
+                                                            <i class="fas fa-users"></i> View
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                
+                                <!-- Unapproved Courses -->
+                                <div class="tab-pane fade" id="unapprovedCourses">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Course Name</th>
+                                                    <th>Requested By</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Advanced Networking</td>
+                                                    <td>Prof. Smith</td>
+                                                    <td>
+                                                        <button class="btn btn-success btn-sm">
+                                                            <i class="fas fa-check"></i> Approve
+                                                        </button>
+                                                        <button class="btn btn-danger btn-sm">
+                                                            <i class="fas fa-times"></i> Deny
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Data Science Basics</td>
+                                                    <td>Dr. Jones</td>
+                                                    <td>
+                                                        <button class="btn btn-success btn-sm">
+                                                            <i class="fas fa-check"></i> Approve
+                                                        </button>
+                                                        <button class="btn btn-danger btn-sm">
+                                                            <i class="fas fa-times"></i> Deny
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Footer -->
+                        <div class="card-footer bg-light text-center text-muted">
+                            <small>Ensure user access details are accurate and up-to-date.</small>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Modal -->
-<div class="modal fade" id="schoolYearModal" tabindex="-1" aria-labelledby="schoolYearModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+
+<!-- Student Enrollment Modal -->
+<div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="schoolYearModalLabel">Course</h5>
+                <h5 class="modal-title" id="studentModalLabel">Course Enrollment</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p class="mb-3 modal-body-description">Create and Update Courses to share with others.</p>
+                <!-- Tabs for Student Status -->
+                <ul class="nav nav-pills mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#activeStudents">Active Students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#completedStudents">Completed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#unenrolledStudents">Unenrolled</a>
+                    </li>
+                </ul>
 
-                <div class="d-grid gap-2 mb-4">
-                    <button class="btn btn-create" type="button" onclick="window.location.href='../E-learning/course-create.html'">Create Course</button>
-                    <button class="btn btn-info" type="button" onclick="window.location.href='../E-learning/course-update.html'">Update Course</button>
-                    <button class="btn btn-update" type="button" data-bs-toggle="collapse" data-bs-target="#removeCourseList" aria-expanded="false" aria-controls="removeCourseList">Remove Course</button>
-                </div>
-
-                <!-- List of Courses to Remove -->
-                <div class="collapse" id="removeCourseList">
-                    <div class="card card-body shadow-sm">
-                        <p class="fw-bold mb-3">Select a course to remove:</p>
+                <div class="tab-content">
+                    <!-- Active Students -->
+                    <div class="tab-pane fade show active" id="activeStudents">
                         <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Introduction to Cybersecurity
-                                <button class="btn btn-sm btn-danger" onclick="removeCourse('Introduction to Cybersecurity')">Remove</button>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Introduction to IoT
-                                <button class="btn btn-sm btn-danger" onclick="removeCourse('Introduction to IoT')">Remove</button>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Network Basics
-                                <button class="btn btn-sm btn-danger" onclick="removeCourse('Network Basics')">Remove</button>
-                            </li>
+                            <li class="list-group-item">John Doe</li>
+                            <li class="list-group-item">Jane Smith</li>
+                        </ul>
+                    </div>
+
+                    <!-- Completed Students -->
+                    <div class="tab-pane fade" id="completedStudents">
+                        <ul class="list-group">
+                            <li class="list-group-item">Alice Johnson</li>
+                        </ul>
+                    </div>
+
+                    <!-- Unenrolled Students -->
+                    <div class="tab-pane fade" id="unenrolledStudents">
+                        <ul class="list-group">
+                            <li class="list-group-item">Bob Williams</li>
                         </ul>
                     </div>
                 </div>
@@ -163,251 +278,24 @@
         </div>
     </div>
 </div>
-                
-                <!-- Ongoing Courses Section -->
-<div class="container mt-3">
-    <h3 class="fw-bold mb-4">Ongoing Courses</h3>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <!-- Card 1 -->
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="Cybersecurity">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="../E-Learning/course-page.html" class="text-decoration-none text-dark fw-bold">Introduction to Cybersecurity</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Explore the exciting field of cybersecurity and why it is a future-proof career.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Additional cards can go here -->
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="Cybersecurity">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="#" class="text-decoration-none text-dark fw-bold">Introduction to Cybersecurity</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Explore the exciting field of cybersecurity and why it is a future-proof career.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="Cybersecurity">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="#" class="text-decoration-none text-dark fw-bold">Introduction to Cybersecurity</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Explore the exciting field of cybersecurity and why it is a future-proof career.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/cybersecurity.png" class="card-img-top" alt="Cybersecurity">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="#" class="text-decoration-none text-dark fw-bold">Introduction to Cybersecurity</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Explore the exciting field of cybersecurity and why it is a future-proof career.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Available Courses Section -->
-<div class="container mt-5">
-    <h3 class="fw-bold mb-4">Available Courses</h3>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <!-- Card 1 -->
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/iot.png" class="card-img-top" alt="IoT">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="#" class="text-decoration-none text-dark fw-bold">Introduction to IoT</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Learn how IoT is transforming the world and creating new opportunities every day.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Additional cards can go here -->
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/iot.png" class="card-img-top" alt="IoT">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="#" class="text-decoration-none text-dark fw-bold">Introduction to IoT</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Learn how IoT is transforming the world and creating new opportunities every day.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/iot.png" class="card-img-top" alt="IoT">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="#" class="text-decoration-none text-dark fw-bold">Introduction to IoT</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Learn how IoT is transforming the world and creating new opportunities every day.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/iot.png" class="card-img-top" alt="IoT">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="#" class="text-decoration-none text-dark fw-bold">Introduction to IoT</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Learn how IoT is transforming the world and creating new opportunities every day.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Completed Courses Section -->
-<div class="container mt-5">
-    <h3 class="fw-bold mb-4">Completed Courses</h3>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <!-- Card 1 -->
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/network.png" class="card-img-top" alt="Network Basics">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="#" class="text-decoration-none text-dark fw-bold">Network Basics</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Start learning the basics of networking and how computer networks operate.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Additional cards can go here -->
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/network.png" class="card-img-top" alt="Network Basics">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="#" class="text-decoration-none text-dark fw-bold">Network Basics</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Start learning the basics of networking and how computer networks operate.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/network.png" class="card-img-top" alt="Network Basics">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="#" class="text-decoration-none text-dark fw-bold">Network Basics</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Start learning the basics of networking and how computer networks operate.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow">
-                <img src="assets/img/network.png" class="card-img-top" alt="Network Basics">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="#" class="text-decoration-none text-dark fw-bold">Network Basics</a>
-                    </h5>
-                    <p class="text-muted mb-2">Course | Self-paced</p>
-                    <p class="card-text">Start learning the basics of networking and how computer networks operate.</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="ms-auto">
-                        <a href="#" class="text-dark me-2"><i class="fas fa-user fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fas fa-folder fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
     <!-- Scripts -->
     <script>
+        function unenrollStudent(studentID) {
+            if (confirm("Are you sure you want to unenroll this student?")) {
+                // Perform the unenrollment logic (AJAX request or form submission)
+                console.log("Unenrolling student with ID:", studentID);
+            }
+        }
+        </script>
+    <script>
+        function viewStudents(courseName) {
+    document.getElementById("studentModalLabel").innerText = `Students in ${courseName}`;
+    $('#studentModal').modal('show');
+}
+
         // JavaScript function to handle course removal
         function removeCourse(courseName) {
             if (confirm(`Are you sure you want to remove "${courseName}"?`)) {
