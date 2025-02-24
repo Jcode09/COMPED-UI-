@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attendance System Dashboard</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/attendancesys.css">
+
+        <!-- Material Symbols (Person Icon) -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+        <style>
+            
+            .material-symbols-outlined {
+                font-family: 'Material Symbols Outlined', sans-serif;
+                font-size: 100px;
+                color: #6e6e6e;
+            }
+        </style>
+    </head>
+    <body class="body-bg">
+        <!--<div class="rfid-header d-flex justify-content-between align-items-center p-3 shadow-sm rounded">-->
+        <div class="rfid-header d-flex justify-content-between align-items-center p-3 shadow-sm rounded">
+            <div class="d-flex align-items-center logo">
+                <img src="assets/img/COMPED ICON.png" alt="COMPED Logo" class="logo-img img-fluid" style="height: 50px; width: auto;">
+                    <span class="fw-bold fs-3 ms-2 rfid-texttitle">RFID MONITORING</span>
+                </div>
+            </div>        
+        </div>
+
+        <!-- Attendance System -->
+<div class="container d-flex justify-content-center">
+    <div class="card shadow border-0 w-100" style="max-width: 90rem;">
+
+        <!-- Body -->
+        <div class="card-body">
+            <div class="row g-4">
+                <!-- Profile Image Section (Left) -->
+                <div class="col-lg-4 d-flex flex-column align-items-center">
+                    <!-- User ID Picture -->
+                    <div class="card profile-container border p-0 rounded bg-light w-100 d-flex align-items-center justify-content-center"
+                        style="height: 24.4em; max-width: 350px; overflow: hidden;">
+                        <img src="assets/img/developers/John_Michael_Conarco-removebg-preview.png"
+                            alt="User Profile Picture"
+                            class="img-fluid"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+
+                    <!-- Attendance Card -->
+                    <div class="card text-center shadow-sm border-2 mt-4 w-100"
+                        style="max-width: 350px; border-color: #102951;">
+
+                        <!-- Header (User Info) -->
+                        <div class="p-4 text-white" style="background-color: #102951;">
+                            <h6 class="fw-bold m-0">Username User</h6>
+                            <small>2nd Year</small>
+                        </div>
+
+                        <!-- Footer (Time Timed In) -->
+                        <div class="card-footer card-footer-time fw-bold fs-5 py-3 w-100">
+                            09:00 AM
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Report (Right) -->
+                <div class="col-lg-8">
+                    <div class="text-center">
+                        <label class="form-label fw-bold fs-4">Attendance Report</label>
+                        <div class="d-flex flex-wrap justify-content-center gap-5">
+                            
+                            <!-- Attendance Cards (Repeat this for each user) -->
+                            <div class="card text-center shadow-sm border-2 d-flex flex-column align-items-center" 
+                                style="max-width: 250px; border-color: #102951;">
+                                
+                                <!-- Image Section -->
+                                <div class="w-100" style="height: 180px; overflow: hidden;">
+                                    <img src="assets/img/developers/Kyle_Zymund_Grapa-removebg-preview.png" 
+                                        alt="Username" 
+                                        class="w-100 h-100"
+                                        style="object-fit: cover;">
+                                </div>
+
+                                <!-- Header (User Info) -->
+                                <div class="p-2 text-white w-100 text-center" style="background-color: #102951;">
+                                    <h6 class="fw-bold m-0">Username User</h6>
+                                    <small>2nd Year</small>
+                                </div>
+
+                                <!-- Footer (Time Timed In) -->
+                                <div class="card-footer card-footer-time fw-bold fs-5 py-2 w-100">
+                                    09:00 AM
+                                </div>
+                            </div>
+
+                            <div class="card text-center shadow-sm border-2 d-flex flex-column align-items-center" 
+                                style="max-width: 250px; border-color: #102951;">
+                                <div class="w-100" style="height: 180px; overflow: hidden;">
+                                    <img src="assets/img/developers/Jeriebel_Bulac_Calunsag-removebg-preview.png" 
+                                        alt="Username" 
+                                        class="w-100 h-100"
+                                        style="object-fit: cover;">
+                                </div>
+
+                                <div class="p-2 text-white w-100 text-center" style="background-color: #102951;">
+                                    <h6 class="fw-bold m-0">Username User</h6>
+                                    <small>2nd Year</small>
+                                </div>
+
+                                <div class="card-footer card-footer-time fw-bold fs-5 py-2 w-100">
+                                    09:00 AM
+                                </div>
+                            </div>
+
+                            <div class="card text-center shadow-sm border-2 d-flex flex-column align-items-center" 
+                                style="max-width: 250px; border-color: #102951;">
+                                <div class="w-100" style="height: 180px; overflow: hidden;">
+                                    <img src="assets/img/developers/Romel_Keith_Lugo-removebg-preview.png" 
+                                        alt="Username" 
+                                        class="w-100 h-100"
+                                        style="object-fit: cover;">
+                                </div>
+
+                                <div class="p-2 text-white w-100 text-center" style="background-color: #102951;">
+                                    <h6 class="fw-bold m-0">Username User</h6>
+                                    <small>2nd Year</small>
+                                </div>
+
+                                <div class="card-footer card-footer-time fw-bold fs-5 py-2 w-100">
+                                    09:00 AM
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Success Message Card (Aligned) -->
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="card alert text-time-in text-center fw-bold p-3 shadow-sm"
+                            style="width: 83%; background-color: white; border: 2px solid #102951; font-size: 1.8em;">
+                            User timed in successfully!
+                        </div>
+                    </div>
+
+                    <!-- Student RFID Input & Time (Below Attendance Report) -->
+                    <div class="row justify-content-center g-3">
+                        <div class="col-md-5">
+                            <div class="card border border-1 rounded-3 p-4 shadow-sm bg-light text-center">
+                                <form action="{{ route('admin.officer.storeRfidAttendance', ['id' => $event->id]) }}" 
+                                    method="POST">
+                                    <input type="hidden" name="event_id" value="{{ $event->id }}">
+                                    <label for="student-rfid" class="form-label fw-bold text-primary">
+                                        Student RFID:
+                                    </label>
+                                    <input type="text" name="rfid"
+                                        class="form-control text-center fw-bold rounded-pill border-2"
+                                        style="padding: 7.7px; font-size: 1.2em;" autofocus autocomplete="off">
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="card border border-1 rounded-3 p-4 shadow-sm bg-light text-center">
+                                <label for="time-in" class="form-label fw-bold">Time:</label>
+                                <span id="ph-time" class=" text-primary fs-2">-:-- --</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer bg-light text-center text-muted">
+            <small>All Powered by CompED 2025</small>
+        </div>
+    </div>
+</div>
+
+    
+                    
+        </div><br>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/main.js"></script>    
+    </body>
+</html>

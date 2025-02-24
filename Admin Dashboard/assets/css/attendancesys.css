@@ -764,7 +764,8 @@ footer {
 }
 
 .rfid-header {
-    background: linear-gradient(135deg, #005f73, #03829b);
+    background-color: #ffffff;
+    /*background: linear-gradient(135deg, #005f73, #03829b);*/
     color: white;
     border-radius: 10px;
     margin-top: 1em;
@@ -783,3 +784,23 @@ footer {
     background-color: #03699b;
 }
 
+.rfid-texttitle{
+    color: #102951;
+}
+
+.attendance-card {
+    height: 16.6rem; /* Adjust height as needed */
+    width: 15rem;
+}
+
+.card-footer-time{
+    color: #102951;
+}
+
+.text-time-in{
+    color: #102951;
+}
+
+.card {
+    border: 2px solid #102951 !important;
+}
