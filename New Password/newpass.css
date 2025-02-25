@@ -45,9 +45,13 @@ h4 {
 
 .toggle-password {
     cursor: pointer;
-    background: transparent;
-    border-left: 0;
+    color: #00142B; /* Dark Blue - Adjust to match your theme */
 }
+
+.toggle-password:hover {
+    color: #0047AB; /* Lighter shade of blue when hovered */
+}
+
 
 .btn-primary {
     font-weight: 500;
@@ -72,3 +76,4 @@ h4 {
     font-size: 0.875rem;
     font-weight: 500;
 }
+
