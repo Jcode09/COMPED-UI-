@@ -2,7 +2,7 @@ body {
     background-color: #f8f9fa;
 }
 .sidebar {
-background-color: #00142B;
+    background: linear-gradient(to bottom, #00142B, #003366);
 height: 100vh;
 color: white;
 position: fixed;
@@ -86,7 +86,7 @@ border-bottom-right-radius: 0px;
     }
 }
 .hero {
-    background-color: #0077ff;
+    background: linear-gradient(to right, #007bff, #003875);
     color: white;
     border-radius: 10px;
     padding: 30px;
