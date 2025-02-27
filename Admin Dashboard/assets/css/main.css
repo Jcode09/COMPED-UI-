@@ -3,7 +3,7 @@ body {
 }
 
 .sidebar {
-background-color: #00142B;
+ background: linear-gradient(to bottom, #00142B, #003366);
 height: 100vh;
 color: white;
 position: fixed;
