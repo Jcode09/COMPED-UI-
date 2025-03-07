@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
 body {
     background: linear-gradient(to right, #00142B, #003366);
     font-family: 'Poppins', sans-serif;
 }
+
 .container {
     display: flex;
     justify-content: center;
@@ -11,23 +11,26 @@ body {
     min-height: 100vh;
     padding: 20px;
 }
-.modal-dialog {
+
+.terms-modal-dialog {
     max-width: 600px;
     width: 100%;
 }
-.modal-content {
+
+.terms-modal-content {
     background: #f8f9fa;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 20px;
     max-width: 600px;
-    
 }
 
-.modal-body {
-    max-height: 300px; /* Adjust height as needed */
-    overflow-y: auto; /* Enables scrolling */
+.terms-modal-body {
+    max-height: 300px;
+    /* Adjust height as needed */
+    overflow-y: auto;
+    /* Enables scrolling */
     text-align: left;
     padding-right: 10px;
     text-align: justify;
@@ -40,6 +43,7 @@ body {
     position: relative;
     display: inline-block;
 }
+
 .terms-header {
     display: flex;
     align-items: center;
@@ -53,51 +57,57 @@ body {
     content: "";
     flex-grow: 1;
     height: 2px;
-    background-color:#00142B; /* Blue line */
-    margin: 0 10px; /* Adjust space around text */
+    background-color: #00142B;
+    /* Blue line */
+    margin: 0 10px;
+    /* Adjust space around text */
 }
+
 .terms-icon {
     display: block;
     margin-bottom: 10px;
-    font-size: 3rem; /* Adjust size as needed */
-    color: #0d6efd; /* Bootstrap primary blue */
+    font-size: 3rem;
+    /* Adjust size as needed */
+    color: #0d6efd;
+    /* Bootstrap primary blue */
 }
 
-.modal-footer .btn-primary {
+.terms-modal-footer .btn-primary {
     background: linear-gradient(to right, #00142B, #004080);
     border: none;
     font-weight: 500;
 }
 
-.modal-footer .btn-primary:hover {
+.terms-modal-footer .btn-primary:hover {
     background: linear-gradient(to right, #002855, #0055aa);
 }
 
-.modal-footer .btn-secondary {
+.terms-modal-footer .btn-secondary {
     background: #6c757d;
     border: none;
     font-weight: 500;
 }
 
-.modal-footer .btn-secondary:hover {
+.terms-modal-footer .btn-secondary:hover {
     background: #5a6268;
 }
-.logo {
+
+.terms-logo {
     position: fixed;
     top: 20px;
     left: 20px;
     width: 120px;
     z-index: 1000;
 }
+
 @media (max-width: 768px) {
-    .modal-dialog {
+    .terms-modal-dialog {
         max-width: 90%;
     }
-    .terms-icon {
+    .terms-terms-icon {
         font-size: 2rem;
     }
-
-    .modal-body {
+    .terms-modal-body {
         max-height: 200px;
     }
 }

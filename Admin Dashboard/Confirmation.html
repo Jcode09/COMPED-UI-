@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
             padding: 20px;
             background-color: #007bff;
         }
+        
         .content-box {
             background-color: white;
             padding: 30px;
@@ -25,37 +27,40 @@
             max-width: 600px;
             width: 100%;
         }
+        
         .borrow-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 15px;
         }
+        
         .borrow-icon {
             width: 120px;
             height: auto;
         }
+        
         .borrow-description {
             font-size: 16px;
             line-height: 1.5;
             color: black;
         }
+        
         .confirm-btn {
-    font-weight: bold;
-    border-radius: 50px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: 2px solid #007bff;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.confirm-btn:hover {
-    background-color: transparent;
-    color: #007bff;
-}
-
-
+            font-weight: bold;
+            border-radius: 50px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .confirm-btn:hover {
+            background-color: transparent;
+            color: #007bff;
+        }
+        
         footer {
             margin-top: 20px;
             font-size: 14px;
@@ -63,31 +68,32 @@
         }
     </style>
 </head>
+
 <body>
 
-  <div class="content-box">
-      <div style="display: flex; align-items: center; justify-content: center; margin: 15px 0;">
-        <div style="text-align: center; position: relative;">
-          <span style="font-size: 4rem; font-weight: bold;  padding: 0 10px;">CompED</span>
-            <br>
-            <span style="font-size: 0.875rem; color: black;">Thank you for Trusting CompED</span>
+    <div class="content-box">
+        <div style="display: flex; align-items: center; justify-content: center; margin: 15px 0;">
+            <div style="text-align: center; position: relative;">
+                <span style="font-size: 4rem; font-weight: bold;  padding: 0 10px;">CompED</span>
+                <br>
+                <span style="font-size: 0.875rem; color: black;">Thank you for Trusting CompED</span>
+            </div>
         </div>
-    </div>
 
-    <div class="borrow-container">
-        <img src="assets/img/borrowconfirmation.png" alt="Borrow Icon" class="borrow-icon">
-        <h1 style="color: #007bff;">Borrow Request Approved</h1>
-        <p class="borrow-description">Your request to borrow the item has been successfully approved.<br>
-            Please check your email for further details and pickup instructions.</p>
-        <button class="confirm-btn">View Details</button>
-    </div>
+        <div class="borrow-container">
+            <img src="assets/img/borrowconfirmation.png" alt="Borrow Icon" class="borrow-icon">
+            <h1 style="color: #007bff;">Borrow Request Approved</h1>
+            <p class="borrow-description">Your request to borrow the item has been successfully approved.<br> Please check your email for further details and pickup instructions.</p>
+            <button class="confirm-btn">View Details</button>
+        </div>
 
-    <footer>
-        <small>&copy; CompED All Rights Reserved.</small>
-    </footer>
-  </div>
+        <footer>
+            <small>&copy; CompED All Rights Reserved.</small>
+        </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
