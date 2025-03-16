@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 body {
     background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
 }
 .sidebar {
-    background: linear-gradient(to bottom, #00142B, #003366);
+background: #0e2238;
 height: 100vh;
 color: white;
 position: fixed;
@@ -86,7 +89,7 @@ border-bottom-right-radius: 0px;
     }
 }
 .hero {
-    background: linear-gradient(to right, #007bff, #003875);
+    background: #0e2238;
     color: white;
     border-radius: 10px;
     padding: 30px;
@@ -100,9 +103,9 @@ border-bottom-right-radius: 0px;
 }
 
 .schedule-button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: 2px solid white; /* Sets the border color to white */
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid rgb(252, 252, 252); /* Sets the border color to white */
     padding: 10px 20px;
     font-size: 1em;
     font-weight: bold;
@@ -234,7 +237,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .search button[type="submit"] {
-background-color: #4e99e9;
+background-color: #0080FF;
 border: none;
 color: #fff;
 cursor: pointer;
@@ -250,7 +253,7 @@ transition: .9s ease;
 .search button[type="submit"]:hover {
 transform: scale(1.1);
 color: rgb(255, 255, 255);
-background-color: blue;
+background-color: #0080FF;
 }
 
 
@@ -270,10 +273,10 @@ transition: 0.2s;
 }
 
 .button:hover {
-color: var(--hover-text);
-transform: translate(-0.25rem, -0.25rem);
-background: var(--hover-bg);
-box-shadow: 0.25rem 0.25rem var(--bg);
+    color: white;
+    transform: translate(-0.25rem, -0.25rem);
+    background: #0080FF;
+    box-shadow: 0.25rem 0.25rem black;
 }
 
 .button:active {
@@ -328,7 +331,7 @@ box-shadow: none;
     margin-right: 10px;
 }
 .sidebar a:hover {
-    background-color: #161b22;
+    background-color: #0080FF;
 }
 .sidebar .logo {
     font-size: 24px;
@@ -397,9 +400,8 @@ background-color: #f0f0f0;
 }
 
 .menu-item:hover .menu-icon {
-transform: scale(1.1); 
+    transform: scale(1.1);
 }
-
 .menu-item:hover .menu-text {
 color: #007bff; 
 }
