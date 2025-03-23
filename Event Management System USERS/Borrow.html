@@ -179,6 +179,9 @@
                         <div class="item-collection-box p-3 border rounded shadow-sm">
                             <h4 class="text-center">Item Collection</h4>
                             <hr>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="searchItem" placeholder="Search for an item..." onkeyup="filterItems()">
+                            </div>
                             <div class="d-flex justify-content-center flex-wrap">
                                 <div class="card shadow-sm border rounded m-2" style="width: 10rem;">
                                     <img src="assets/images/arduinouno.png" class="card-img-top" alt="Microcontroller">
@@ -296,6 +299,19 @@ label.form-label {
             `;
         }
     }
+    function filterItems() {
+    let input = document.getElementById("searchItem").value.toLowerCase();
+    let cards = document.querySelectorAll(".item-collection-box .card");
+
+    cards.forEach(card => {
+        let itemName = card.querySelector(".card-text").textContent.toLowerCase();
+        if (itemName.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
 </script>
 
     
