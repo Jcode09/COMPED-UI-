@@ -62,63 +62,126 @@
                 </div>
 
                 <div class="previous-card">
-                    <h5 class="mb-4">Borrow Tools and Equipments</h5>
-                    <div class="d-flex flex-wrap gap-3">
-                        <!-- Microcontrollers Card -->
-                        <div class="card shadow-sm border rounded" style="width: 18rem;">
-                            <div class="card-header bg-primary text-white text-center">
-                                <h5 class="mb-0">Microcontrollers</h5>
-                            </div>
-                            <img src="assets/images/arduinouno.png" class="card-img-top" alt="Microcontrollers Image">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <!-- View Tools Button -->
-<div class="card-footer bg-white text-center">
-   <!-- Button to trigger the modal -->
-<button type="button" class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#borrowingModal">
-  View Tools
-</button>
-
-</div>
-                        </div>
-                
-                        <!-- Prototyping Tools Card -->
-                        <div class="card shadow-sm border rounded" style="width: 18rem;">
-                            <div class="card-header bg-primary text-white text-center">
-                                <h5 class="mb-0">Prototyping Tools</h5>
-                            </div>
-                            <img src="assets/images/breadboard.png" class="card-img-top" alt="Prototyping Tools Image">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <div class="card-footer bg-white text-center">
-                                <!-- Button to trigger the modal -->
-                             <button type="button" class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#borrowingModal">
-                               View Tools
-                             </button>
+                    <h5 class="mb-4 text-left">Borrow Tools and Equipment</h5>
+                    <div class="card-container">
+                        <div class="card-wrapper">
+                            <div class="card position-relative overflow-hidden border-0 rounded-4">
+                                <div class="card-img-container">
+                                    <img src="assets/images/arduinouno.png" class="card-img-top" alt="Microcontrollers Image">
+                                </div>
+                                <div class="card-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white text-center p-4 rounded-4">
+                                    <h3 class="fw-bold">Microcontrollers</h3>
+                                    <p class="fs-5 text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <button type="button" class="btn btn-light rounded-pill fw-bold border border-2 px-3 py-2 mt-2" data-bs-toggle="modal" data-bs-target="#borrowingModal">
+                                        View Tools
+                                    </button>
+                                </div>
                             </div>
                         </div>
                 
-                        <!-- Sensors Card -->
-                        <div class="card shadow-sm border rounded" style="width: 18rem;">
-                            <div class="card-header bg-primary text-white text-center">
-                                <h5 class="mb-0">Sensors</h5>
+                        <div class="card-wrapper">
+                            <div class="card position-relative overflow-hidden border-0 rounded-4">
+                                <div class="card-img-container">
+                                    <img src="assets/images/breadboard.png" class="card-img-top" alt="Prototyping Tools Image">
+                                </div>
+                                <div class="card-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white text-center p-4 rounded-4">
+                                    <h3 class="fw-bold">Prototyping Tools</h3>
+                                    <p class="fs-5 text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <button type="button" class="btn btn-light rounded-pill fw-bold border border-2 px-3 py-2 mt-2" data-bs-toggle="modal" data-bs-target="#borrowingModal">
+                                        View Tools
+                                    </button>
+                                </div>
                             </div>
-                            <img src="assets/images/ultrasonic.png" class="card-img-top" alt="Sensors Image">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <div class="card-footer bg-white text-center">
-                                <!-- Button to trigger the modal -->
-                             <button type="button" class="btn btn-primary rounded-pill fw-bold border border-2 px-4 py-2" data-bs-toggle="modal" data-bs-target="#borrowingModal">
-                               View Tools
-                             </button>
+                        </div>
+                
+                        <div class="card-wrapper">
+                            <div class="card position-relative overflow-hidden border-0 rounded-4">
+                                <div class="card-img-container">
+                                    <img src="assets/images/ultrasonic.png" class="card-img-top" alt="Sensors Image">
+                                </div>
+                                <div class="card-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white text-center p-4 rounded-4">
+                                    <h3 class="fw-bold">Sensors</h3>
+                                    <p class="fs-5 text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <button type="button" class="btn btn-light rounded-pill fw-bold border border-2 px-3 py-2 mt-2" data-bs-toggle="modal" data-bs-target="#borrowingModal">
+                                        View Tools
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
+                <style>
+                    .card-container {
+                        display: flex;
+                        flex-wrap: nowrap; /* Ensure cards stay in a single row */
+                        gap: 1.5rem; /* Adjust spacing between cards */
+                        overflow-x: auto; /* Add horizontal scroll if cards overflow */
+                        padding-bottom: 1rem; /* Add padding to prevent scrollbar overlap */
+                    }
+                
+                    .card-wrapper {
+                        flex: 0 0 auto; /* Prevent cards from shrinking or growing */
+                        width: 30rem; /* Set card width */
+                        position: relative;
+                        cursor: pointer;
+                    }
+                
+                    .card {
+                        background: transparent;
+                        transition: transform 0.4s ease-in-out;
+                    }
+                
+                    .card-img-container {
+                        width: 100%;
+                        height: 250px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        padding: 15px;
+                    }
+                
+                    .card-img-container img {
+                        max-width: 100%;
+                        max-height: 100%;
+                        object-fit: contain;
+                        transition: transform 0.4s ease-in-out;
+                    }
+                
+                    .card-wrapper:hover .card-img-container img {
+                        transform: scale(1.8);
+                    }
+                
+                    .card-wrapper:hover .card {
+                        transform: scale(1.05);
+                    }
+                
+                    .card-overlay {
+                        background: rgba(0, 0, 0, 0.5);
+                        opacity: 0;
+                        transform: scale(0.9);
+                        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+                    }
+                
+                    .card-wrapper:hover .card-overlay {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                
+                    .card-overlay h3 {
+                        font-size: 1.6rem;
+                    }
+                
+                    .card-overlay p {
+                        font-size: 1.1rem;
+                    }
+                
+                    .card-overlay button {
+                        font-size: 1rem;
+                        padding: 8px 16px;
+                    }
+                </style> 
 
  <!-- Borrowing and Item Collection Modal -->
 <div class="modal fade" id="borrowingModal" tabindex="-1" aria-labelledby="borrowingModalLabel" aria-hidden="true">
