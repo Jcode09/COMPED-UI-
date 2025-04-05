@@ -506,9 +506,6 @@ position: static;
 transform: none;
 }
 }
-
-
-
 .card-img-top {
     width: 60%; /* You can change this value */
     display: block;
@@ -517,13 +514,6 @@ transform: none;
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
 }
-
-
-
-
-
-
-
 /* media query */
 .event-system .card {
     padding: 20px;
@@ -538,8 +528,6 @@ transform: none;
         padding: 20px 15px;
     }
 }
-
-
 @media (max-width: 768px) {
     .calendar-container .month ul li {
         font-size: 16px; /* Reduce font size */
@@ -569,7 +557,6 @@ transform: none;
     }
 }
 
-
 .event-table {
     width: 100%;
     border-collapse: collapse;
@@ -580,7 +567,6 @@ transform: none;
     padding: 8px;
     text-align: left;
 }
-
 @media (max-width: 768px) {
     .event-table {
         overflow-x: auto;
@@ -594,8 +580,6 @@ transform: none;
         width: 100%; /* Stack columns on smaller screens */
     }
 }
-
-
 
 @media (max-width: 576px) {
     .user-info {
@@ -614,8 +598,6 @@ transform: none;
         height: 40px;
     }
 }
-
-
 @media (max-width: 768px) {
     .sidebar {
         width: 100%; /* Full width for mobile */
