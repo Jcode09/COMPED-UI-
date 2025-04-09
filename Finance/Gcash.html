@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dock_to_right" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dock_to_right"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="finance.css">
     <style>
         .container {
-   
-            border: 2px solid rgb(167, 167, 167); 
-        
+
+            border: 2px solid rgb(167, 167, 167);
+
             padding: 15px;
             border-radius: 8px;
         }
@@ -29,131 +33,132 @@
             background-color: #004aad;
             color: white;
         }
-    
+
 
         /*Payment Area */
         .plan {
-  border-radius: 16px;
-  box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
-  padding: 10px;
-  background-color: #fff;
-  color: #697e91;
-  max-width: 100%;
-  min-height: 350px; 
-  margin-bottom: 20px;
-}
+            border-radius: 16px;
+            box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
+            padding: 10px;
+            background-color: #fff;
+            color: #697e91;
+            max-width: 100%;
+            min-height: 350px;
+            margin-bottom: 20px;
+        }
 
-.plan strong {
-  font-weight: 600;
-  color: #425275;
-}
+        .plan strong {
+            font-weight: 600;
+            color: #425275;
+        }
 
-.plan .inner {
-  align-items: center;
-  padding: 20px;
-  padding-top: 40px;
-  background-color: #ecf0ff;
-  border-radius: 12px;
-  position: relative;
-  height: 100%;  
-}
+        .plan .inner {
+            align-items: center;
+            padding: 20px;
+            padding-top: 40px;
+            background-color: #ecf0ff;
+            border-radius: 12px;
+            position: relative;
+            height: 100%;
+        }
 
-.plan .pricing {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #bed6fb;
-  border-radius: 99em 0 0 99em;
-  display: flex;
-  align-items: center;
-  padding: 0.625em 0.75em;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #425475;
-}
+        .plan .pricing {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #bed6fb;
+            border-radius: 99em 0 0 99em;
+            display: flex;
+            align-items: center;
+            padding: 0.625em 0.75em;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #425475;
+        }
 
-.plan .pricing small {
-  color: #707a91;
-  font-size: 0.75em;
-  margin-left: 0.25em;
-}
+        .plan .pricing small {
+            color: #707a91;
+            font-size: 0.75em;
+            margin-left: 0.25em;
+        }
 
-.plan .title {
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: #425675;
-}
+        .plan .title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #425675;
+        }
 
-.plan .title + * {
-  margin-top: 0.75rem;
-}
+        .plan .title+* {
+            margin-top: 0.75rem;
+        }
 
-.plan .info + * {
-  margin-top: 1rem;
-}
+        .plan .info+* {
+            margin-top: 1rem;
+        }
 
-.plan .features {
-  display: flex;
-  flex-direction: column;
-}
+        .plan .features {
+            display: flex;
+            flex-direction: column;
+        }
 
-.plan .features li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+        .plan .features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-.plan .features li + * {
-  margin-top: 0.75rem;
-}
+        .plan .features li+* {
+            margin-top: 0.75rem;
+        }
 
-.plan .features .icon {
-  background-color: #1FCAC5;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-}
+        .plan .features .icon {
+            background-color: #1FCAC5;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+        }
 
-.plan .features .icon svg {
-  width: 14px;
-  height: 14px;
-}
+        .plan .features .icon svg {
+            width: 14px;
+            height: 14px;
+        }
 
-.plan .features + * {
-  margin-top: 1.25rem;
-}
+        .plan .features+* {
+            margin-top: 1.25rem;
+        }
 
-.plan .action {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-}
+        .plan .action {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
 
-.plan .button {
-  background-color: #6558d3;
-  border-radius: 6px;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1.125rem;
-  text-align: center;
-  border: 0;
-  outline: 0;
-  width: 100%;
-  padding: 0.625em 0.75em;
-  text-decoration: none;
-}
+        .plan .button {
+            background-color: #6558d3;
+            border-radius: 6px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.125rem;
+            text-align: center;
+            border: 0;
+            outline: 0;
+            width: 100%;
+            padding: 0.625em 0.75em;
+            text-decoration: none;
+        }
 
-.plan .button:hover, .plan .button:focus {
-  background-color: #4133B7;
-}
+        .plan .button:hover,
+        .plan .button:focus {
+            background-color: #4133B7;
+        }
 
-/* Modal Design */
-:root {
+        /* Modal Design */
+        :root {
             --primary-color: #0063a7;
             --secondary-color: #004a7c;
             --accent-color: #00a0e9;
@@ -162,17 +167,17 @@
             --border-radius: 16px;
             --box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f5f7fa;
         }
-        
+
         /* Larger modal size */
         .payment-modal {
             max-width: 600px;
         }
-        
+
         .modal-glass {
             background: rgba(255, 255, 255, 0.98);
             border-radius: var(--border-radius);
@@ -180,29 +185,29 @@
             overflow: hidden;
             border: none;
         }
-        
+
         .modal-header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border-bottom: none;
             padding: 1.75rem;
         }
-        
+
         .modal-title {
             font-weight: 600;
             letter-spacing: 0.5px;
             font-size: 1.5rem;
         }
-        
+
         .btn-close-white {
             filter: brightness(0) invert(1);
             font-size: 1.25rem;
         }
-        
+
         .modal-body {
             padding: 2.5rem;
         }
-        
+
         /* Larger QR code section */
         .qr-container {
             display: flex;
@@ -210,7 +215,7 @@
             align-items: center;
             padding: 1.5rem 0 2.5rem;
         }
-        
+
         .qr-instruction {
             text-align: center;
             margin-bottom: 2rem;
@@ -218,20 +223,20 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .qr-instruction h5 {
             color: var(--primary-color);
             font-weight: 600;
             margin-bottom: 0.75rem;
             font-size: 1.25rem;
         }
-        
+
         .qr-instruction p {
             color: #6c757d;
             font-size: 1rem;
             line-height: 1.5;
         }
-        
+
         /* Much larger QR code */
         .qr-code {
             width: 300px;
@@ -243,13 +248,13 @@
             background: white;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }
-        
+
         /* Receipt section styling */
         .receipt-section {
             display: none;
             animation: fadeIn 0.4s ease-out;
         }
-        
+
         .input-field {
             width: 100%;
             padding: 1rem 1.25rem;
@@ -258,19 +263,19 @@
             font-size: 1rem;
             margin-bottom: 1.25rem;
         }
-        
+
         .input-field:focus {
             border-color: var(--accent-color);
             box-shadow: 0 0 0 4px rgba(0, 99, 167, 0.15);
             outline: none;
         }
-        
+
         /* Larger file upload area */
         .file-upload {
             position: relative;
             margin: 1.5rem 0;
         }
-        
+
         .file-upload-input {
             position: absolute;
             left: 0;
@@ -280,7 +285,7 @@
             opacity: 0;
             cursor: pointer;
         }
-        
+
         .file-upload-label {
             display: flex;
             align-items: center;
@@ -292,18 +297,18 @@
             transition: all 0.2s ease;
             font-size: 1rem;
         }
-        
+
         .file-upload-label:hover {
             border-color: var(--accent-color);
             background-color: rgba(0, 160, 233, 0.05);
         }
-        
+
         .file-name {
             font-size: 0.9rem;
             color: #6c757d;
             margin-top: 0.75rem;
         }
-        
+
         /* Bigger buttons */
         .submit-btn {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -317,12 +322,12 @@
             margin-top: 1.5rem;
             transition: all 0.2s ease;
         }
-        
+
         .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 99, 167, 0.3);
         }
-        
+
         .back-btn {
             background: transparent;
             color: var(--primary-color);
@@ -333,19 +338,26 @@
             font-size: 0.95rem;
             width: 100%;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         /* Enhanced step indicator */
         .step-indicator {
             display: flex;
             justify-content: center;
             margin-bottom: 2rem;
         }
-        
+
         .step {
             display: flex;
             flex-direction: column;
@@ -354,7 +366,7 @@
             flex: 1;
             max-width: 200px;
         }
-        
+
         .step-number {
             width: 40px;
             height: 40px;
@@ -368,24 +380,24 @@
             margin-bottom: 0.75rem;
             font-size: 1.1rem;
         }
-        
+
         .step.active .step-number {
             background-color: var(--primary-color);
             color: white;
         }
-        
+
         .step-label {
             font-size: 0.9rem;
             color: #6c757d;
             text-align: center;
             line-height: 1.4;
         }
-        
+
         .step.active .step-label {
             color: var(--primary-color);
             font-weight: 500;
         }
-        
+
         .step-connector {
             flex: 1;
             height: 2px;
@@ -394,24 +406,27 @@
             position: relative;
             top: -15px;
         }
-        
+
         .step-connector.active {
             background: var(--primary-color);
         }
-        
+
         /* Responsive adjustments */
         @media (max-width: 576px) {
             .modal-body {
                 padding: 1.75rem;
             }
+
             .qr-code {
                 width: 240px;
                 height: 240px;
             }
+
             .step {
                 margin: 0 0.5rem;
             }
         }
+
         .download-qr-link {
             color: var(--primary-color);
             font-size: 0.9rem;
@@ -420,18 +435,138 @@
             display: inline-block;
             transition: all 0.2s ease;
         }
-        
+
         .download-qr-link:hover {
             color: var(--secondary-color);
             text-decoration: underline;
         }
-        
+
         .download-qr-link i {
             margin-right: 0.3rem;
             font-size: 0.8rem;
         }
+
+        .validation-message {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .input-error {
+            border-color: #dc3545 !important;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .success-message i {
+            margin-right: 0.5rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Modern Success Notification */
+        .success-toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-left: 5px solid #4BB543;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 350px;
+        }
+
+        .success-toast.active {
+            transform: translateX(0);
+        }
+
+        .success-icon {
+            width: 40px;
+            height: 40px;
+            background: #4BB543;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .success-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .success-content h5 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #333;
+        }
+
+        .success-content p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background: rgba(75, 181, 67, 0.3);
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background: #4BB543;
+            animation: progress 3s linear forwards;
+        }
+
+        @keyframes progress {
+            0% {
+                width: 100%;
+            }
+
+            100% {
+                width: 0%;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="d-flex flex-wrap">
         <div class="sidebar p-3" id="sidebar">
@@ -440,323 +575,408 @@
                 <img src="images/COMPED_LOGO.png" alt="COMPED Logo" class="logo-img img-fluid">
             </div>
             <a href="../Event Home/Event.html" class="menu-item">
-                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/home/v7/24px.svg" alt="Home" class="menu-icon">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/home/v7/24px.svg" alt="Home"
+                    class="menu-icon">
                 <span class="menu-text">Home</span>
             </a>
             <a href="../Event Calendar/Calendar.html" class="menu-item">
-                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/calendar_today/v7/24px.svg" alt="Events" class="menu-icon">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/calendar_today/v7/24px.svg" alt="Events"
+                    class="menu-icon">
                 <span class="menu-text">Events</span>
             </a>
             <a href="../Attendance/Attendance.html" class="menu-item">
-                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/person/v7/24px.svg" alt="Attendance" class="menu-icon">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/person/v7/24px.svg" alt="Attendance"
+                    class="menu-icon">
                 <span class="menu-text">Attendance</span>
             </a>
             <a href="../Finance/Finance.html" class="menu-item">
-                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/paid/v7/24px.svg" alt="Finance" class="menu-icon">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/paid/v7/24px.svg" alt="Finance"
+                    class="menu-icon">
                 <span class="menu-text">Finance</span>
             </a>
             <a href="../Borrow and Tools/Borrow.html" class="menu-item">
-                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/construction/v7/24px.svg" alt="Borrowing & Inventory" class="menu-icon">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/construction/v7/24px.svg"
+                    alt="Borrowing & Inventory" class="menu-icon">
                 <span class="menu-text">Borrowing & Inventory</span>
             </a>
         </div>
 
-         <div class="content-wrapper flex-grow-1 container-fluid">
+        <div class="content-wrapper flex-grow-1 container-fluid">
             <div class="main-content">
                 <div class="d-flex flex-wrap align-items-center mb-4">
                     <div class="search w-100">
                         <input placeholder="Search..." type="text" class="form-control">
-                      <!--  <button type="submit" class="btn btn-primary mt-2">Go</button> -->
+                        <!--  <button type="submit" class="btn btn-primary mt-2">Go</button> -->
                     </div>
-                  </div>
-                  <div style="display: flex; align-items: center; margin: 15px 0;">
-                      <div style="text-align: left; margin-right: 10px;">
-                          <span style="white-space: nowrap; font-size: 1.75rem; font-weight: bold;">Finance</span>
-                          <br>
-                          <span style="font-size: 0.875rem; color: #777;">Pay your Contribution and Fines here.</span>
-                      </div>
-                      <hr style="border-top: 5px solid #0077ff; flex-grow: 1; margin-left: 10px;">
-                  </div>
-                
-<!-- To Pay Area -->
-<div class="container mt-4">
-    <!-- Header -->
-    <div class="card border mb-4">
-        <div class="card-header bg-primary text-white text-center">
-            <h4 class="mb-0"><i class="fas fa-wallet me-2"></i> Pending Payments</h4>
-        </div>
-
-     <!-- Body -->
-<div class="card-body">
-    <div class="d-flex flex-column">
-        <div class="plan">
-            <div class="inner">
-                <span class="pricing">
-                    <span>₱1,500.00</span>
-                </span>
-                <p class="title">Himamat Event</p>
-                <p class="info">This is an event payment.</p>
-                <ul class="features">
-                    <li>
-                        <span class="icon">
-                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                            </svg>
-                        </span>
-                        <span><strong>Payment</strong> required</span>
-                    </li>
-                </ul>
-                <div class="action">
-                    <a class="button" href="#" data-bs-toggle="modal" data-bs-target="#paymentModal">
-                        <i class="fas fa-credit-card me-2"></i> Pay Now
-                    </a>
                 </div>
-            </div>
-        </div>
-
-        <div class="plan">
-            <div class="inner">
-                <span class="pricing">
-                    <span>₱2,000.00</span>
-                </span>
-                <p class="title">Foundation Day</p>
-                <p class="info">This is a foundation day event payment.</p>
-                <ul class="features">
-                    <li>
-                        <span class="icon">
-                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                            </svg>
-                        </span>
-                        <span><strong>Payment</strong> required</span>
-                    </li>
-                </ul>
-                <div class="action">
-                    <a class="button" href="#" data-bs-toggle="modal" data-bs-target="#paymentModal">
-                        <i class="fas fa-credit-card me-2"></i> Pay Now
-                    </a>
+                <div style="display: flex; align-items: center; margin: 15px 0;">
+                    <div style="text-align: left; margin-right: 10px;">
+                        <span style="white-space: nowrap; font-size: 1.75rem; font-weight: bold;">Finance</span>
+                        <br>
+                        <span style="font-size: 0.875rem; color: #777;">Pay your Contribution and Fines here.</span>
+                    </div>
+                    <hr style="border-top: 5px solid #0077ff; flex-grow: 1; margin-left: 10px;">
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-        <!-- Footer -->
-        <div class="card-footer bg-light text-center text-muted">
-            <small>Please ensure your payment details are accurate and up-to-date.</small>
-        </div>
-    </div>
-</div>
+                <!-- To Pay Area -->
+                <div class="container mt-4">
+                    <!-- Header -->
+                    <div class="card border mb-4">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h4 class="mb-0"><i class="fas fa-wallet me-2"></i> Pending Payments</h4>
+                        </div>
 
+                        <!-- Body -->
+                        <div class="card-body">
+                            <div class="d-flex flex-column">
+                                <div class="plan">
+                                    <div class="inner">
+                                        <span class="pricing">
+                                            <span>₱1,500.00</span>
+                                        </span>
+                                        <p class="title">Himamat Event</p>
+                                        <p class="info">This is an event payment.</p>
+                                        <ul class="features">
+                                            <li>
+                                                <span class="icon">
+                                                    <svg height="24" width="24" viewBox="0 0 24 24"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0 0h24v24H0z" fill="none"></path>
+                                                        <path fill="currentColor"
+                                                            d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z">
+                                                        </path>
+                                                    </svg>
+                                                </span>
+                                                <span><strong>Payment</strong> required</span>
+                                            </li>
+                                        </ul>
+                                        <div class="action">
+                                            <a class="button" href="#" data-bs-toggle="modal"
+                                                data-bs-target="#paymentModal">
+                                                <i class="fas fa-credit-card me-2"></i> Pay Now
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
 
-<!-- Payment Modal -->
-<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered payment-modal">
-      <div class="modal-content modal-glass">
-          <div class="modal-header">
-              <h5 class="modal-title" id="paymentModalLabel"><i class="fas fa-qrcode me-2"></i> GCash Payment</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <div class="step-indicator">
-                  <div class="step active" id="step1">
-                      <div class="step-number">1</div>
-                      <div class="step-label">Scan QR Code</div>
-                  </div>
-                  <div class="step-connector" id="connector1"></div>
-                  <div class="step" id="step2">
-                      <div class="step-number">2</div>
-                      <div class="step-label">Upload Payment Receipt</div>
-                  </div>
-              </div>
-              
-              <!-- QR Code Section -->
-              <div id="qrSection">
-                <div class="qr-instruction">
-                    <h5>Scan to Pay with GCash</h5>
-                    <p>Open your GCash app and scan this QR code to complete your payment</p>
-                </div>
-                
-                <div class="qr-container">
-                    <img src="images/qr-code.png" alt="GCash QR Code" class="qr-code" id="downloadableQr">
-                    <!-- New download link added here -->
-                    <a href="#" class="download-qr-link" id="downloadQrLink">
-                        <i class="fas fa-download"></i> Download QR Code
-                    </a>
-                </div>
-                
-                <button class="submit-btn" id="proceedToReceipt">
-                    <i class="fas fa-check-circle me-2"></i> I have Completed Payment
-                </button>
-            </div>
-              
-              <!-- Receipt Upload Section -->
-              <div class="receipt-section" id="receiptSection">
-                  <div class="qr-instruction">
-                      <h5>Upload Payment Confirmation</h5>
-                      <p>Please provide your details and upload a screenshot of your GCash payment confirmation for verification.</p>
-                  </div>
-                  
-                  <input type="text" class="input-field" id="senderName" placeholder="Your Full Name">
-                  <input type="text" class="input-field" id="senderNumber" placeholder="Your Mobile Number">
-                  <input type="text" class="input-field" id="transactionNumber" placeholder="GCash Transaction Reference">
-                  
-                  <div class="file-upload">
-                      <input type="file" id="receiptUpload" class="file-upload-input" accept="image/*">
-                      <label for="receiptUpload" class="file-upload-label">
-                          <i class="fas fa-cloud-upload-alt me-2"></i>
-                          <span>Click to upload receipt (screenshot or photo)</span>
-                      </label>
-                      <div class="file-name" id="fileName">No file selected</div>
-                  </div>
-                  
-                  <button class="submit-btn" id="submitReceipt">
-                      <i class="fas fa-paper-plane me-2"></i> Submit Receipt
-                  </button>
-                  
-                  <button class="back-btn" id="backToQR">
-                      <i class="fas fa-arrow-left me-2"></i> Back to QR Code
-                  </button>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
+                                <div class="plan">
+                                    <div class="inner">
+                                        <span class="pricing">
+                                            <span>₱2,000.00</span>
+                                        </span>
+                                        <p class="title">Foundation Day</p>
+                                        <p class="info">This is a foundation day event payment.</p>
+                                        <ul class="features">
+                                            <li>
+                                                <span class="icon">
+                                                    <svg height="24" width="24" viewBox="0 0 24 24"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0 0h24v24H0z" fill="none"></path>
+                                                        <path fill="currentColor"
+                                                            d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z">
+                                                        </path>
+                                                    </svg>
+                                                </span>
+                                                <span><strong>Payment</strong> required</span>
+                                            </li>
+                                        </ul>
+                                        <div class="action">
+                                            <a class="button" href="#" data-bs-toggle="modal"
+                                                data-bs-target="#paymentModal">
+                                                <i class="fas fa-credit-card me-2"></i> Pay Now
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function() {
-      // Proceed to receipt upload
-      $('#proceedToReceipt').click(function() {
-          $('#qrSection').hide();
-          $('#receiptSection').show();
-          $('#step1').removeClass('active');
-          $('#step2').addClass('active');
-          $('#connector1').addClass('active');
-      });
-      // QR Code Download Functionality
-      $('#downloadQrLink').click(function(e) {
-            e.preventDefault();
-            
-            // Create a temporary anchor element
-            const link = document.createElement('a');
-            link.href = $('#downloadableQr').attr('src');
-            link.download = 'GCash-Payment-QR.png';
-            
-            // Trigger the download
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Optional: Show a brief confirmation
-            const originalText = $(this).html();
-            $(this).html('<i class="fas fa-check"></i> QR Downloaded');
-            
-            // Revert text after 2 seconds
-            setTimeout(() => {
-                $(this).html(originalText);
-            }, 2000);
-        });
-        
-      // Back to QR code
-      $('#backToQR').click(function() {
-          $('#receiptSection').hide();
-          $('#qrSection').show();
-          $('#step2').removeClass('active');
-          $('#step1').addClass('active');
-          $('#connector1').removeClass('active');
-      });
-      
-      // File upload display
-      $('#receiptUpload').change(function() {
-          const fileName = $(this).val().split('\\').pop();
-          $('#fileName').text(fileName || 'No file selected');
-      });
-      
-      // Submit receipt
-      $('#submitReceipt').click(function() {
-          const senderName = $('#senderName').val();
-          const senderNumber = $('#senderNumber').val();
-          const transactionNumber = $('#transactionNumber').val();
-          const receiptFile = $('#receiptUpload').val();
-          
-          if (!senderName || !senderNumber || !transactionNumber || !receiptFile) {
-              alert('Please fill in all fields and upload your receipt');
-              return;
-          }
-          
-          // Process the receipt submission
-          console.log('Receipt submitted', {
-              senderName,
-              senderNumber,
-              transactionNumber,
-              receiptFile: $('#receiptUpload').val().split('\\').pop()
-          });
-          
-          // Show success message
-          alert('Thank you! Your payment receipt has been submitted.');
-          $('#paymentModal').modal('hide');
-          
-          // Reset form
-          $('input').val('');
-          $('#fileName').text('No file selected');
-      });
-  });
-</script>
-
-
-            <div class="right-sidebar">
-                <div class="user-info">
-                    <img src="images/profile.jpg" alt="Profile Image">
-                    <div>
-                        <h5>Jeriebel Calunsag</h5>
-                        <p>Online</p>
+                        <!-- Footer -->
+                        <div class="card-footer bg-light text-center text-muted">
+                            <small>Please ensure your payment details are accurate and up-to-date.</small>
+                        </div>
                     </div>
                 </div>
 
-        
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        // Payment method selection
-        $('.payment-method').click(function() {
-            $('.payment-method').removeClass('active');
-            $(this).addClass('active');
-        });
-        
-        // Confirm payment button
-        $('#confirmPayment').click(function() {
-            const senderNumber = $('#senderNumber').val();
-            const transactionNumber = $('#transactionNumber').val();
-            
-            if (!senderNumber || !transactionNumber) {
-                alert('Please fill in all required fields');
-                return;
-            }
-            
-            // Here you would typically send the data to your backend
-            console.log('Payment confirmed', {
-                event: $('#eventName').text(),
-                amount: $('#eventAmount').text(),
-                senderNumber,
-                transactionNumber
-            });
-            
-            // Show success message
-            alert('Payment submitted successfully!');
-            $('#paymentModal').modal('hide');
-        });
-    });
-</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
 
-    </script>
+                <!-- Payment Modal -->
+                <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered payment-modal">
+                        <div class="modal-content modal-glass">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="paymentModalLabel"><i class="fas fa-qrcode me-2"></i> GCash
+                                    Payment</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="step-indicator">
+                                    <div class="step active" id="step1">
+                                        <div class="step-number">1</div>
+                                        <div class="step-label">Scan QR Code</div>
+                                    </div>
+                                    <div class="step-connector" id="connector1"></div>
+                                    <div class="step" id="step2">
+                                        <div class="step-number">2</div>
+                                        <div class="step-label">Upload Payment Receipt</div>
+                                    </div>
+                                </div>
+
+                                <!-- QR Code Section -->
+                                <div id="qrSection">
+                                    <div class="qr-instruction">
+                                        <h5>Scan to Pay with GCash</h5>
+                                        <p>Open your GCash app and scan this QR code to complete your payment</p>
+                                    </div>
+
+                                    <div class="qr-container">
+                                        <img src="images/qr-code.png" alt="GCash QR Code" class="qr-code"
+                                            id="downloadableQr">
+                                        <a href="#" class="download-qr-link" id="downloadQrLink">
+                                            <i class="fas fa-download"></i> Download QR Code
+                                        </a>
+                                    </div>
+
+                                    <button class="submit-btn" id="proceedToReceipt">
+                                        <i class="fas fa-check-circle me-2"></i> I have Completed Payment </button>
+                                </div>
+                                <!-- Success Toast Notification (hidden by default) -->
+                                <div class="success-toast" id="successToast">
+                                    <div class="success-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="success-content">
+                                        <h5>Payment Confirmed!</h5>
+                                        <p>Your receipt has been submitted successfully.</p>
+                                    </div>
+                                    <div class="progress-bar"></div>
+                                </div>
+                                <!-- Receipt Upload Section -->
+                                <div class="receipt-section" id="receiptSection">
+                                    <div class="qr-instruction">
+                                        <h5>Upload Payment Confirmation</h5>
+                                        <p>Please provide your details and upload a screenshot of your GCash payment
+                                            confirmation</p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="input-field" id="senderName"
+                                            placeholder="Your Full Name">
+                                        <div class="validation-message" id="nameError">Please enter your full name</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="input-field" id="senderNumber"
+                                            placeholder="Your Mobile Number">
+                                        <div class="validation-message" id="numberError">Please enter a valid mobile
+                                            number</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="input-field" id="transactionNumber"
+                                            placeholder="GCash Transaction Reference">
+                                        <div class="validation-message" id="referenceError">Please enter the transaction
+                                            reference</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="file-upload">
+                                            <input type="file" id="receiptUpload" class="file-upload-input"
+                                                accept="image/*">
+                                            <label for="receiptUpload" class="file-upload-label">
+                                                <i class="fas fa-cloud-upload-alt me-2"></i>
+                                                <span>Click to upload receipt (screenshot or photo)</span>
+                                            </label>
+                                            <div class="file-name" id="fileName">No file selected</div>
+                                        </div>
+                                        <div class="validation-message" id="fileError">Please upload your payment
+                                            receipt</div>
+                                    </div>
+
+                                    <button class="submit-btn" id="submitReceipt">
+                                        <i class="fas fa-paper-plane me-2"></i> Submit Receipt
+                                    </button>
+
+                                    <button class="back-btn" id="backToQR">
+                                        <i class="fas fa-arrow-left me-2"></i> Back to QR Code
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
+                    </script>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script>
+                        $(document).ready(function () {
+                            // Proceed to receipt upload
+                            $('#proceedToReceipt').click(function () {
+                                $('#qrSection').hide();
+                                $('#receiptSection').show();
+                                $('#step1').removeClass('active');
+                                $('#step2').addClass('active');
+                                $('#connector1').addClass('active');
+                            });
+
+                            // Back to QR code
+                            $('#backToQR').click(function () {
+                                $('#receiptSection').hide();
+                                $('#qrSection').show();
+                                $('#step2').removeClass('active');
+                                $('#step1').addClass('active');
+                                $('#connector1').removeClass('active');
+                            });
+
+                            // File upload display
+                            $('#receiptUpload').change(function () {
+                                const fileName = $(this).val().split('\\').pop();
+                                $('#fileName').text(fileName || 'No file selected');
+                                $('#fileError').hide();
+                                $('.file-upload-label').css('border-color', '#e9ecef');
+                            });
+
+                            // QR Code Download Functionality
+                            $('#downloadQrLink').click(function (e) {
+                                e.preventDefault();
+                                const link = document.createElement('a');
+                                link.href = $('#downloadableQr').attr('src');
+                                link.download = 'GCash-Payment-QR.png';
+                                document.body.appendChild(link);
+                                link.click();
+                                document.body.removeChild(link);
+
+                                // Optional: Show a brief confirmation
+                                const originalText = $(this).html();
+                                $(this).html('<i class="fas fa-check"></i> QR Downloaded');
+                                setTimeout(() => {
+                                    $(this).html(originalText);
+                                }, 2000);
+                            });
+
+                            // Single submit handler with toast notification
+                            $('#submitReceipt').off('click').click(function () {
+                                // Reset previous validations
+                                $('.validation-message').hide();
+                                $('.input-field').removeClass('input-error');
+                                $('.file-upload-label').css('border-color', '#e9ecef');
+
+                                // Validate fields
+                                let isValid = true;
+                                if (!$('#senderName').val()) {
+                                    $('#nameError').show();
+                                    $('#senderName').addClass('input-error');
+                                    isValid = false;
+                                }
+                                if (!$('#senderNumber').val()) {
+                                    $('#numberError').show();
+                                    $('#senderNumber').addClass('input-error');
+                                    isValid = false;
+                                }
+                                if (!$('#transactionNumber').val()) {
+                                    $('#referenceError').show();
+                                    $('#transactionNumber').addClass('input-error');
+                                    isValid = false;
+                                }
+                                if (!$('#receiptUpload').val()) {
+                                    $('#fileError').show();
+                                    $('.file-upload-label').css('border-color', '#dc3545');
+                                    isValid = false;
+                                }
+
+                                if (isValid) {
+                                    // Process submission
+                                    console.log('Receipt submitted', {
+                                        senderName: $('#senderName').val(),
+                                        senderNumber: $('#senderNumber').val(),
+                                        transactionNumber: $('#transactionNumber').val(),
+                                        receiptFile: $('#receiptUpload').val().split('\\').pop()
+                                    });
+
+                                    // Show toast notification
+                                    $('#successToast').addClass('active');
+
+                                    // Reset form after delay
+                                    setTimeout(() => {
+                                        // Hide toast
+                                        $('#successToast').removeClass('active');
+
+                                        // Reset form
+                                        $('input').val('');
+                                        $('#fileName').text('No file selected');
+                                        $('.file-upload-label').html(
+                                            '<i class="fas fa-cloud-upload-alt me-2"></i><span>Click to upload receipt (screenshot or photo)</span>'
+                                        );
+
+                                        // Return to QR view
+                                        $('#receiptSection').hide();
+                                        $('#qrSection').show();
+                                        $('#step2').removeClass('active');
+                                        $('#step1').addClass('active');
+                                        $('#connector1').removeClass('active');
+                                    }, 3000);
+                                }
+                            });
+                        });
+                    </script>
+
+
+                    <div class="right-sidebar">
+                        <div class="user-info">
+                            <img src="images/profile.jpg" alt="Profile Image">
+                            <div>
+                                <h5>Jeriebel Calunsag</h5>
+                                <p>Online</p>
+                            </div>
+                        </div>
+
+
+                        <script
+                            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
+                        </script>
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script>
+                            $(document).ready(function () {
+                                // Payment method selection
+                                $('.payment-method').click(function () {
+                                    $('.payment-method').removeClass('active');
+                                    $(this).addClass('active');
+                                });
+
+                                // Confirm payment button
+                                $('#confirmPayment').click(function () {
+                                    const senderNumber = $('#senderNumber').val();
+                                    const transactionNumber = $('#transactionNumber').val();
+
+                                    if (!senderNumber || !transactionNumber) {
+                                        alert('Please fill in all required fields');
+                                        return;
+                                    }
+
+                                    // Here you would typically send the data to your backend
+                                    console.log('Payment confirmed', {
+                                        event: $('#eventName').text(),
+                                        amount: $('#eventAmount').text(),
+                                        senderNumber,
+                                        transactionNumber
+                                    });
+
+                                    // Show success message
+                                    alert('Payment submitted successfully!');
+                                    $('#paymentModal').modal('hide');
+                                });
+                            });
+                        </script>
+                        <script
+                            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
+                        </script>
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                        <script>
+
+                        </script>
 </body>
+
 </html>
