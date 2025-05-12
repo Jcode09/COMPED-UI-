@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank Canva Dashboard</title>
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css
+" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dock_to_right
+" rel="stylesheet">
+    <link rel="stylesheet" href="..\E-Learning\assets\css\course-create.css">
+    <link rel="stylesheet" href="..\E-Learning\assets\css\dashboard.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="d-flex flex-wrap">
+        <!-- Sidebar -->
+        <div class="sidebar p-3" id="sidebar">
+            <span class="material-symbols-outlined" id="toggleSidebar" style="display: none;">dock_to_right</span>
+            <div class="logo">
+                <img src="../E-Learning/assets/img/COMPED_LOGO.png" alt="COMPED Logo" class="logo-img img-fluid">
+            </div>
+            <a href="../E-Learning/dashboard.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/home/v7/24px.svg
+" alt="Home" class="menu-icon">
+                <span class="menu-text">Home</span>
+            </a>
+            <a href="../E-Learning/elearning.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/calendar_today/v7/24px.svg
+" alt="Events" class="menu-icon">
+                <span class="menu-text">E-Learning</span>
+            </a>
+            <a href="../E-Learning/ecertificate.html" class="menu-item">
+                <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/person/v7/24px.svg
+" alt="Attendance" class="menu-icon">
+                <span class="menu-text">E-Certificates</span>
+            </a>
+        </div>
+        <!-- Main Content -->
+<div class="content-wrapper flex-grow-1 container-fluid">
+    <div class="main-content">
+        <!-- Search Section -->
+        <div class="d-flex flex-wrap align-items-center mb-4">
+            <div class="search w-100">
+                <input placeholder="Search..." type="text" class="form-control">
+                <!-- Uncomment button if needed -->
+                <!-- <button type="submit" class="btn btn-primary mt-2">Go</button> -->
+            </div>
+            <!-- Right Sidebar -->
+            <div class="user-info">
+                <img src="images/profile.jpg" alt="Profile Image">
+                <div>
+                    <h5>Username</h5>
+                    <p>Online</p>
+                </div>
+            </div>
+        </div>
+        <!-- E-learning Header -->
+<div style="display: flex; align-items: center; margin: 10px 0;">
+    <span style="font-size: 1.75rem; font-weight: bold; white-space: nowrap;">E-learning</span>
+    <hr style="border-top: 2px solid #0077ff; flex-grow: 1; margin-left: 10px;">
+</div>
+<div class="create-course-section">
+    <form>
+        <div class="mb-3">
+            <label for="course-title" class="form-label">Course Title:</label>
+            <input type="text" class="form-control" id="course-title" placeholder="Enter course title">
+        </div>
+        <div class="mb-3">
+             <label for="information" class="form-label">Information:</label>
+            <textarea class="form-control" id="information" rows="3" placeholder="Enter course information"></textarea>
+        </div>
+    </form>
+</div>
+<!-- Modules Box Section -->
+<div class="container-fluid mt-5">
+    <div class="card shadow border-0">
+        <div class="card-header bg-primary text-white text-center d-flex justify-content-center align-items-center">
+            <h4 class="mb-0 me-2">Create Lessons</h4>
+            <i class="fas fa-plus-circle" onclick="addModule()" style="cursor: pointer; color: #fff; font-size: 24px;"></i>
+        </div>
+        
+
+        <!-- Body -->
+        <div class="card-body">
+            <!-- Modules Container -->
+            <div id="modules-container"></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer bg-light text-center text-muted">
+            <button type="button" class="btn btn-success btn-lg px-4">Publish Course</button>
+        </div>
+    </div>
+</div>
+
+<script>
+let moduleCount = 0;
+
+function addModule() {
+    moduleCount++;
+    let module = document.createElement("div");
+    module.classList.add("module");
+    module.style.marginBottom = "15px"; // Adds spacing between modules
+
+    let isFirstModule = moduleCount === 1; // Check if it's the first module
+    let initialDisplay = isFirstModule ? "block" : "none";
+    let initialIcon = isFirstModule ? "▲" : "▼";
+
+    module.innerHTML = `
+        <div class="module-header d-flex justify-content-between align-items-center p-3 bg-light border rounded" 
+             style="cursor: pointer;">
+            <span class="fw-bold rename-module" contenteditable="true">
+                📘 Module ${moduleCount}
+            </span>
+            <div>
+                <button class="btn btn-sm rounded-btn remove-module">
+    <i class="fas fa-minus"></i>
+</button>
+
+                <span class="toggle-icon">${initialIcon}</span>
+            </div>
+        </div>
+        <div class="module-content p-3 border rounded mt-2" style="display: ${initialDisplay};">
+            <div class="mb-3 text-center">
+                <button type="button" class="btn btn-outline-primary btn-sm w-100 rounded-btn">
+                    <i class="fas fa-file-pdf"></i> Add PDF
+                </button>
+            </div>
+            <div class="mb-3 text-center">
+                <button type="button" class="btn btn-outline-secondary btn-sm w-100 rounded-btn">
+                    <i class="fas fa-link"></i> Add Link
+                </button>
+            </div>
+            <div class="text-center">
+                <a href="../E-Learning/course-exam-add.html" class="btn btn-success btn-sm w-100 rounded-btn">
+                    <i class="fas fa-pen"></i> Create Quiz
+                </a>
+            </div>
+        </div>
+    `;
+
+    document.getElementById("modules-container").appendChild(module);
+
+    let toggleIcon = module.querySelector(".toggle-icon");
+    let content = module.querySelector(".module-content");
+
+    // Toggle when clicking anywhere on the header
+    module.querySelector(".module-header").addEventListener("click", function () {
+        let isVisible = content.style.display === "block";
+        content.style.display = isVisible ? "none" : "block";
+        toggleIcon.textContent = isVisible ? "▼" : "▲";
+    });
+
+    // Remove module when clicking the remove button
+    module.querySelector(".remove-module").addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent accidental dropdown toggle
+        module.remove();
+    });
+}
+
+// Initialize first module on page load
+addModule();
+</script>
+
+<!-- Add Course Modal (Optional) -->
+<div class="modal fade" id="addCourseModal" tabindex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCourseModalLabel">Add New Course</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="courseName" class="form-label">Course Name</label>
+                <input type="text" class="form-control" id="courseName" placeholder="Enter course name">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save Course</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Scripts -->
+    <script>function handlePlusClick() {}</script>
+    <script>
+        document.querySelectorAll('.module-header').forEach(header => {
+  header.addEventListener('click', function () {
+    let content = this.nextElementSibling;
+    content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+    this.querySelector('.toggle-icon').textContent = content.style.display === "block" ? "▲" : "▼";
+  });
+});
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js
+"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js
+"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js
+"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015
+" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9075895a2b20ddc0","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.1.0","token":"cd0b4b3a733644fc843ef0b185f98241"}' crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('toggleSidebar').addEventListener('click', function () {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('minimized');
+        });
+    </script>
+</body>
+</html>
+ 
