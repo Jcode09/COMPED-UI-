@@ -61,7 +61,7 @@
         </div>
         <!-- E-learning Header -->
 <div style="display: flex; align-items: center; margin: 10px 0;">
-    <span style="font-size: 1.75rem; font-weight: bold; white-space: nowrap;">E-learning</span>
+    <span style="font-size: 1.75rem; font-weight: bold; white-space: nowrap;">Create E-Learning Course</span>
     <hr style="border-top: 2px solid #0077ff; flex-grow: 1; margin-left: 10px;">
 </div>
 <div class="create-course-section">
@@ -99,22 +99,26 @@
 
         <!-- Certificate Upload Section -->
         <div class="col-md-4">
-            <div class="card shadow border-0">
-                
-                <div class="card-header bg-primary text-white text-center d-flex justify-content-center align-items-center">
-                    <h4 class="mb-0 me-2">Certificates</h4>
-                    <button class="btn btn-link text-white fs-3 p-0" onclick="openModuleModal()">
-                      <i class="fas fa-plus-circle"></i>
-                    </button>
-                  </div>
-                <div class="card-body text-center">
-                    <input type="file" id="certificateInput" accept=".pdf,.jpg,.jpeg,.png" class="form-control mb-3">
-                    <div id="certificatePreview" class="border" style="height: 300px; overflow: auto;">
-                        <span class="text-muted">No certificate uploaded.</span>
-                    </div>
-                </div>
+          <div class="card shadow border-0">
+            <div class="card-header bg-primary text-white text-center d-flex justify-content-center align-items-center">
+              <h4 class="mb-0 me-2">Certificates</h4>
+              <!-- This triggers the file input -->
+              <button class="btn btn-link text-white fs-3 p-0" onclick="document.getElementById('certificateInput').click()">
+                <i class="fas fa-plus-circle"></i>
+              </button>
             </div>
+            <div class="card-body text-center">
+              <!-- Hidden file input -->
+              <input type="file" id="certificateInput" accept=".pdf,.jpg,.jpeg,.png" style="display:none">
+
+              <!-- Preview Area -->
+              <div id="certificatePreview" class="border" style="height: 300px; overflow: auto;">
+                <span class="text-muted">No certificate uploaded.</span>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="card-footer bg-light text-center text-muted">
             <button type="button" class="btn btn-success btn-lg px-4">Publish Course</button>
         </div>  
@@ -206,6 +210,7 @@ document.getElementById('certificateInput').addEventListener('change', function(
           <hr>
   
           <div class="mb-3">
+            <h6>Quizzes</h6>
             <button type="button" class="btn btn-outline-success" onclick="addQuiz()">Add Quiz</button>
             <input type="hidden" id="quizCreated" value="false">
           </div>
@@ -240,7 +245,6 @@ document.getElementById('certificateInput').addEventListener('change', function(
       document.getElementById('moduleTitle').value = mod.title;
       mod.pdfs.forEach(pdf => addPdfToList(pdf));
       mod.links.forEach(link => addLinkToList(link));
-      document.getElementById('hasQuiz').checked = mod.hasQuiz;
       document.getElementById('quizCreated').value = mod.hasQuiz ? "true" : "false";
 
     }
