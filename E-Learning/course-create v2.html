@@ -83,7 +83,7 @@
 <div class="col-md-8">
     <div class="card shadow border-0">
       <div class="card-header bg-primary text-white text-center d-flex justify-content-center align-items-center">
-        <h4 class="mb-0 me-2">Create Lessons</h4>
+        <h4 class="mb-0 me-2">Lessons</h4>
         <button class="btn btn-link text-white fs-3 p-0" onclick="openModuleModal()">
           <i class="fas fa-plus-circle"></i>
         </button>
@@ -91,18 +91,22 @@
       <div class="card-body">
         <div id="modules-container"></div>
       </div>
-      <div class="card-footer bg-light text-center text-muted">
+      <!--<div class="card-footer bg-light text-center text-muted">
         <button type="button" class="btn btn-success btn-lg px-4">Publish Course</button>
-      </div>
+      </div>-->
     </div>
   </div>
 
         <!-- Certificate Upload Section -->
         <div class="col-md-4">
             <div class="card shadow border-0">
-                <div class="card-header bg-success text-white text-center">
-                    <h5 class="mb-0">Certificate</h5>
-                </div>
+                
+                <div class="card-header bg-primary text-white text-center d-flex justify-content-center align-items-center">
+                    <h4 class="mb-0 me-2">Certificates</h4>
+                    <button class="btn btn-link text-white fs-3 p-0" onclick="openModuleModal()">
+                      <i class="fas fa-plus-circle"></i>
+                    </button>
+                  </div>
                 <div class="card-body text-center">
                     <input type="file" id="certificateInput" accept=".pdf,.jpg,.jpeg,.png" class="form-control mb-3">
                     <div id="certificatePreview" class="border" style="height: 300px; overflow: auto;">
@@ -111,6 +115,9 @@
                 </div>
             </div>
         </div>
+        <div class="card-footer bg-light text-center text-muted">
+            <button type="button" class="btn btn-success btn-lg px-4">Publish Course</button>
+        </div>  
     </div>
 </div>
 
@@ -198,12 +205,11 @@ document.getElementById('certificateInput').addEventListener('change', function(
   
           <hr>
   
-          <div class="form-check mb-3">
-            <input class="form-check-input" type="checkbox" id="hasQuiz">
-            <label class="form-check-label" for="hasQuiz">
-              Include Quiz
-            </label>
+          <div class="mb-3">
+            <button type="button" class="btn btn-outline-success" onclick="addQuiz()">Add Quiz</button>
+            <input type="hidden" id="quizCreated" value="false">
           </div>
+          
   
         </div>
         <div class="modal-footer">
@@ -226,7 +232,7 @@ document.getElementById('certificateInput').addEventListener('change', function(
     document.getElementById('moduleTitle').value = '';
     document.getElementById('pdfList').innerHTML = '';
     document.getElementById('linkList').innerHTML = '';
-    document.getElementById('hasQuiz').checked = false;
+    document.getElementById('quizCreated').value = "false";
 
     if (index !== null) {
       // Editing existing module
@@ -235,6 +241,8 @@ document.getElementById('certificateInput').addEventListener('change', function(
       mod.pdfs.forEach(pdf => addPdfToList(pdf));
       mod.links.forEach(link => addLinkToList(link));
       document.getElementById('hasQuiz').checked = mod.hasQuiz;
+      document.getElementById('quizCreated').value = mod.hasQuiz ? "true" : "false";
+
     }
 
     const modal = new bootstrap.Modal(document.getElementById('moduleModal'));
@@ -302,6 +310,12 @@ document.getElementById('certificateInput').addEventListener('change', function(
     linkList.appendChild(item);
   }
 
+  function addQuiz() {
+  document.getElementById('quizCreated').value = "true";
+  window.open("../E-Learning/course-exam-add.html", "_blank");
+}
+
+
   function saveModule() {
     const title = document.getElementById('moduleTitle').value.trim();
     if (!title) {
@@ -315,7 +329,8 @@ document.getElementById('certificateInput').addEventListener('change', function(
     // Gather links
     const links = Array.from(document.getElementById('linkList').children).map(el => el.querySelector('a').href);
 
-    const hasQuiz = document.getElementById('hasQuiz').checked;
+    const hasQuiz = document.getElementById('quizCreated').value === "true";
+
 
     const moduleData = { title, pdfs, links, hasQuiz };
 
@@ -350,7 +365,12 @@ document.getElementById('certificateInput').addEventListener('change', function(
         <div class="card-body">
           ${mod.pdfs.length ? `<p><strong>PDFs:</strong><br>${mod.pdfs.map(pdf => `<span class="badge bg-primary me-1">${pdf}</span>`).join(' ')}</p>` : ''}
           ${mod.links.length ? `<p><strong>Links:</strong><br>${mod.links.map(link => `<a href="${link}" target="_blank">${link}</a><br>`).join('')}</p>` : ''}
-          <p><strong>Quiz:</strong> ${mod.hasQuiz ? 'Yes' : 'No'}</p>
+          <p><strong>Quiz:</strong> ${
+  mod.hasQuiz
+    ? `<a href="../E-Learning/course-exam.html" target="_blank" class="btn btn-sm btn-success">Open Quiz</a>`
+    : 'None'
+}</p>
+
         </div>
       `;
 
