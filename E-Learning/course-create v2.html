@@ -76,116 +76,295 @@
         </div>
     </form>
 </div>
-<!-- Modules Box Section -->
+<!-- Modules & Certificate Section -->
 <div class="container-fluid mt-5">
+    <div class="row g-4">
+        <!-- Create Lessons Card -->
+<div class="col-md-8">
     <div class="card shadow border-0">
-        <div class="card-header bg-primary text-white text-center d-flex justify-content-center align-items-center">
-            <h4 class="mb-0 me-2">Create Lessons</h4>
-            <i class="fas fa-plus-circle" onclick="addModule()" style="cursor: pointer; color: #fff; font-size: 24px;"></i>
-        </div>
-        
+      <div class="card-header bg-primary text-white text-center d-flex justify-content-center align-items-center">
+        <h4 class="mb-0 me-2">Create Lessons</h4>
+        <button class="btn btn-link text-white fs-3 p-0" onclick="openModuleModal()">
+          <i class="fas fa-plus-circle"></i>
+        </button>
+      </div>
+      <div class="card-body">
+        <div id="modules-container"></div>
+      </div>
+      <div class="card-footer bg-light text-center text-muted">
+        <button type="button" class="btn btn-success btn-lg px-4">Publish Course</button>
+      </div>
+    </div>
+  </div>
 
-        <!-- Body -->
-        <div class="card-body">
-            <!-- Modules Container -->
-            <div id="modules-container"></div>
-        </div>
-
-        <!-- Footer -->
-        <div class="card-footer bg-light text-center text-muted">
-            <button type="button" class="btn btn-success btn-lg px-4">Publish Course</button>
+        <!-- Certificate Upload Section -->
+        <div class="col-md-4">
+            <div class="card shadow border-0">
+                <div class="card-header bg-success text-white text-center">
+                    <h5 class="mb-0">Certificate</h5>
+                </div>
+                <div class="card-body text-center">
+                    <input type="file" id="certificateInput" accept=".pdf,.jpg,.jpeg,.png" class="form-control mb-3">
+                    <div id="certificatePreview" class="border" style="height: 300px; overflow: auto;">
+                        <span class="text-muted">No certificate uploaded.</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
+<script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
 <script>
-let moduleCount = 0;
+document.getElementById('certificateInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const previewContainer = document.getElementById('certificatePreview');
+    previewContainer.innerHTML = '';
 
-function addModule() {
-    moduleCount++;
-    let module = document.createElement("div");
-    module.classList.add("module");
-    module.style.marginBottom = "15px"; // Adds spacing between modules
+    if (!file) return;
 
-    let isFirstModule = moduleCount === 1; // Check if it's the first module
-    let initialDisplay = isFirstModule ? "block" : "none";
-    let initialIcon = isFirstModule ? "▲" : "▼";
+    if (file.type === 'application/pdf') {
+        const fileReader = new FileReader();
+        fileReader.onload = function() {
+            const typedarray = new Uint8Array(this.result);
 
-    module.innerHTML = `
-        <div class="module-header d-flex justify-content-between align-items-center p-3 bg-light border rounded" 
-             style="cursor: pointer;">
-            <span class="fw-bold rename-module" contenteditable="true">
-                📘 Module ${moduleCount}
-            </span>
-            <div>
-                <button class="btn btn-sm rounded-btn remove-module">
-    <i class="fas fa-minus"></i>
-</button>
+            pdfjsLib.getDocument(typedarray).promise.then(pdf => {
+                pdf.getPage(1).then(page => {
+                    const scale = 1.5;
+                    const viewport = page.getViewport({ scale });
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
 
-                <span class="toggle-icon">${initialIcon}</span>
-            </div>
-        </div>
-        <div class="module-content p-3 border rounded mt-2" style="display: ${initialDisplay};">
-            <div class="mb-3 text-center">
-                <button type="button" class="btn btn-outline-primary btn-sm w-100 rounded-btn">
-                    <i class="fas fa-file-pdf"></i> Add PDF
-                </button>
-            </div>
-            <div class="mb-3 text-center">
-                <button type="button" class="btn btn-outline-secondary btn-sm w-100 rounded-btn">
-                    <i class="fas fa-link"></i> Add Link
-                </button>
-            </div>
-            <div class="text-center">
-                <a href="../E-Learning/course-exam-add.html" class="btn btn-success btn-sm w-100 rounded-btn">
-                    <i class="fas fa-pen"></i> Create Quiz
-                </a>
-            </div>
-        </div>
-    `;
-
-    document.getElementById("modules-container").appendChild(module);
-
-    let toggleIcon = module.querySelector(".toggle-icon");
-    let content = module.querySelector(".module-content");
-
-    // Toggle when clicking anywhere on the header
-    module.querySelector(".module-header").addEventListener("click", function () {
-        let isVisible = content.style.display === "block";
-        content.style.display = isVisible ? "none" : "block";
-        toggleIcon.textContent = isVisible ? "▼" : "▲";
-    });
-
-    // Remove module when clicking the remove button
-    module.querySelector(".remove-module").addEventListener("click", function (event) {
-        event.stopPropagation(); // Prevent accidental dropdown toggle
-        module.remove();
-    });
-}
-
-// Initialize first module on page load
-addModule();
+                    page.render({
+                        canvasContext: context,
+                        viewport: viewport
+                    }).promise.then(() => {
+                        previewContainer.appendChild(canvas);
+                    });
+                });
+            });
+        };
+        fileReader.readAsArrayBuffer(file);
+    } else if (file.type.startsWith('image/')) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        img.style.maxWidth = '100%';
+        img.onload = () => URL.revokeObjectURL(img.src);
+        previewContainer.appendChild(img);
+    } else {
+        previewContainer.innerHTML = '<span class="text-danger">Unsupported file type.</span>';
+    }
+});
 </script>
 
-<!-- Add Course Modal (Optional) -->
-<div class="modal fade" id="addCourseModal" tabindex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addCourseModalLabel">Add New Course</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <label for="courseName" class="form-label">Course Name</label>
-                <input type="text" class="form-control" id="courseName" placeholder="Enter course name">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save Course</button>
-            </div>
+
+<!-- Add/Edit Lesson Modal -->
+<div class="modal fade" id="moduleModal" tabindex="-1" aria-labelledby="moduleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="moduleModalLabel">Add/Edit Module</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+  
+          <div class="mb-3">
+            <label for="moduleTitle" class="form-label">Module Title</label>
+            <input type="text" id="moduleTitle" class="form-control" placeholder="Enter module title">
+          </div>
+  
+          <hr>
+  
+          <div class="mb-3">
+            <h6>PDF Lessons</h6>
+            <div id="pdfList" class="list-group mb-2"></div>
+            <input type="file" id="pdfUpload" accept=".pdf" style="display:none" multiple>
+            <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('pdfUpload').click()">
+              <i class="fas fa-file-pdf"></i> Upload PDF(s)
+            </button>
+          </div>
+  
+          <hr>
+  
+          <div class="mb-3">
+            <h6>Lesson Links</h6>
+            <div id="linkList" class="list-group mb-2"></div>
+            <button type="button" class="btn btn-outline-secondary" onclick="addLinkPrompt()">
+              <i class="fas fa-link"></i> Add Link
+            </button>
+          </div>
+  
+          <hr>
+  
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="hasQuiz">
+            <label class="form-check-label" for="hasQuiz">
+              Include Quiz
+            </label>
+          </div>
+  
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button class="btn btn-primary" onclick="saveModule()">Save Module</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+
+<script>
+  // Global array to store modules
+  let modules = [];
+  let editingModuleIndex = null;
+
+  function openModuleModal(index = null) {
+    editingModuleIndex = index;
+
+    // Reset modal fields
+    document.getElementById('moduleTitle').value = '';
+    document.getElementById('pdfList').innerHTML = '';
+    document.getElementById('linkList').innerHTML = '';
+    document.getElementById('hasQuiz').checked = false;
+
+    if (index !== null) {
+      // Editing existing module
+      const mod = modules[index];
+      document.getElementById('moduleTitle').value = mod.title;
+      mod.pdfs.forEach(pdf => addPdfToList(pdf));
+      mod.links.forEach(link => addLinkToList(link));
+      document.getElementById('hasQuiz').checked = mod.hasQuiz;
+    }
+
+    const modal = new bootstrap.Modal(document.getElementById('moduleModal'));
+    modal.show();
+  }
+
+  // Handle PDF uploads
+  document.getElementById('pdfUpload').addEventListener('change', function(e) {
+    const files = Array.from(e.target.files);
+    files.forEach(file => {
+      if (file.type === 'application/pdf') {
+        addPdfToList(file);
+      } else {
+        alert('Only PDF files are allowed!');
+      }
+    });
+    e.target.value = ''; // Reset input
+  });
+
+  function addPdfToList(pdf) {
+    const pdfList = document.getElementById('pdfList');
+    const item = document.createElement('div');
+    item.className = 'list-group-item d-flex justify-content-between align-items-center';
+
+    const name = pdf.name || pdf; // if pdf is File object, use name, else string (filename)
+    item.textContent = name;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'btn btn-sm btn-danger';
+    removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
+    removeBtn.onclick = () => {
+      pdfList.removeChild(item);
+    };
+
+    item.appendChild(removeBtn);
+    pdfList.appendChild(item);
+  }
+
+  function addLinkPrompt() {
+    const link = prompt("Enter lesson link:");
+    if (link && link.trim() !== '') {
+      addLinkToList(link.trim());
+    }
+  }
+
+  function addLinkToList(link) {
+    const linkList = document.getElementById('linkList');
+    const item = document.createElement('div');
+    item.className = 'list-group-item d-flex justify-content-between align-items-center';
+
+    const a = document.createElement('a');
+    a.href = link;
+    a.target = '_blank';
+    a.textContent = link;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'btn btn-sm btn-danger';
+    removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
+    removeBtn.onclick = () => {
+      linkList.removeChild(item);
+    };
+
+    item.appendChild(a);
+    item.appendChild(removeBtn);
+    linkList.appendChild(item);
+  }
+
+  function saveModule() {
+    const title = document.getElementById('moduleTitle').value.trim();
+    if (!title) {
+      alert('Module title cannot be empty.');
+      return;
+    }
+
+    // Gather PDFs from pdfList (just names for demo; ideally you'd upload them to server)
+    const pdfs = Array.from(document.getElementById('pdfList').children).map(el => el.firstChild.textContent);
+
+    // Gather links
+    const links = Array.from(document.getElementById('linkList').children).map(el => el.querySelector('a').href);
+
+    const hasQuiz = document.getElementById('hasQuiz').checked;
+
+    const moduleData = { title, pdfs, links, hasQuiz };
+
+    if (editingModuleIndex !== null) {
+      // Update existing module
+      modules[editingModuleIndex] = moduleData;
+    } else {
+      // Add new module
+      modules.push(moduleData);
+    }
+
+    renderModules();
+    bootstrap.Modal.getInstance(document.getElementById('moduleModal')).hide();
+  }
+
+  function renderModules() {
+    const container = document.getElementById('modules-container');
+    container.innerHTML = '';
+
+    modules.forEach((mod, i) => {
+      const div = document.createElement('div');
+      div.className = 'card mb-3 shadow-sm';
+
+      div.innerHTML = `
+        <div class="card-header d-flex justify-content-between align-items-center" style="cursor:pointer;">
+          <strong>${mod.title}</strong>
+          <div>
+            <button class="btn btn-sm btn-primary me-1" onclick="openModuleModal(${i})"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger" onclick="deleteModule(${i})"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+        <div class="card-body">
+          ${mod.pdfs.length ? `<p><strong>PDFs:</strong><br>${mod.pdfs.map(pdf => `<span class="badge bg-primary me-1">${pdf}</span>`).join(' ')}</p>` : ''}
+          ${mod.links.length ? `<p><strong>Links:</strong><br>${mod.links.map(link => `<a href="${link}" target="_blank">${link}</a><br>`).join('')}</p>` : ''}
+          <p><strong>Quiz:</strong> ${mod.hasQuiz ? 'Yes' : 'No'}</p>
+        </div>
+      `;
+
+      container.appendChild(div);
+    });
+  }
+
+  function deleteModule(index) {
+    if (confirm('Are you sure you want to delete this module?')) {
+      modules.splice(index, 1);
+      renderModules();
+    }
+  }
+</script>
 
 
     <!-- Scripts -->
