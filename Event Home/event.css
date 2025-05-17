@@ -279,8 +279,6 @@ color: rgb(255, 255, 255);
 background-color: blue;
 }
 
-
-
 .button {
 --bg: #000; 
 --hover-bg: #ff90e8; 
@@ -321,11 +319,6 @@ box-shadow: none;
 --bg: #52BF83; 
 --hover-bg: #65D190; 
 }
-
-
-
-
-
 
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -647,11 +640,31 @@ margin-bottom: 10px;
         margin-left: 0; /* Reset margin for mobile */
     }
 }
+/* Attendance Modal Styles */
+#attendanceModal .modal-header {
+    padding: 1rem 1.5rem;
+}
 
+#attendanceModal .modal-body {
+    padding: 1.5rem;
+}
 
+#attendanceModal .table {
+    margin-bottom: 0;
+}
 
+#attendanceModal .table th {
+    font-weight: 600;
+    white-space: nowrap;
+}
 
+#attendanceModal .badge {
+    font-size: 0.85rem;
+    padding: 0.35em 0.65em;
+    font-weight: 500;
+}
 
-
-
-
+#attendanceModal .modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #dee2e6;
+}
