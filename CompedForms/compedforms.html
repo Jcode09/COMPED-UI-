@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Comped Forms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      * {
+        font-family: 'Inter', sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #f2f4f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 700px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        padding: 40px 25px;
+      }
+
+      h1 {
+        color: #2d3e50;
+        font-size: 28px;
+        margin-bottom: 16px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      h3 {
+        color: #3a3a3a;
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      .container {
+        width: 100%;
+        text-align: center;
+      }
+
+      .input-field {
+        width: 100%;
+         margin-bottom: 24px; 
+      }
+
+    .input-field h3 {
+        margin-bottom: 12px; 
+     }
+
+    .input-field label {
+        display: block; 
+        margin-bottom: 10px;
+        font-size: 15px;
+        color: #333;
+      }
+
+
+      .input-field h3 {
+        margin-bottom: 12px; 
+     }
+
+      .input-field input, .input-field label {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #ccd6e0;
+        background-color: #f9f9fb;
+      }
+
+      .input-field input:focus {
+        outline: none;
+        border-color: #5c6bc0;
+      }
+
+      .input-field input[type="radio"] {
+        width: auto;
+        margin-right: 10px;
+      }
+
+      .input-field label {
+        display: block; 
+        margin-bottom: 10px; 
+        font-size: 15px;
+        color: #333;
+     }
+
+      .submit-btn {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #15027c, #3717ec);
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background: linear-gradient(135deg, #300fe9, #18128b);
+      }
+
+      .disclaimer, .terms {
+        color: #6c757d;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .terms a {
+        color: #0f2497;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .footer-text {
+        text-align: center;
+        font-size: 16px;
+        color: #6c757d;
+        font-weight: 500;
+        margin-top: 40px;
+      }
+
+      img {
+        max-width: 100%;
+        border-radius: 12px;
+        margin-bottom: 25px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        form {
+          padding: 20px 15px;
+        }
+
+        .input-field input, .input-field label {
+          font-size: 14px;
+        }
+
+        .submit-btn {
+          padding: 12px;
+          font-size: 16px;
+        }
+
+        .disclaimer, .terms {
+          font-size: 12px;
+        }
+      }
+
+      .input-email div {
+        margin-bottom: 8px;
+     }
+
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <img src="../banner.jpg" alt="Banner">
+      <div class="container">
+        <h1>Sample Forms for CompEd</h1>
+        <p>All submissions to this form will be appended into a table as signatures in the style of an open letter.</p>
+        <h4 style="color: red;">* Required</h4>
+      </div>
+      <div class="input-field">
+        <h3>Name <span style="color: red;">*</span></h3>
+        <input type="text" name="name" placeholder="Your Name" required />
+      </div>
+      <div class="input-field">
+        <h3>Email <span style="color: red;">*</span></h3>
+        <input type="email" name="email" placeholder="Your Email" required />
+      </div>
+
+      <div class="input-field">
+        <h3>1. What is your favorite programming language? <span style="color: red;">*</span></h3>
+        <label><input type="radio" name="q1" required> Python</label>
+        <label><input type="radio" name="q1"> JavaScript</label>
+        <label><input type="radio" name="q1"> Java</label>
+        <label><input type="radio" name="q1"> C++</label>
+      </div>
+
+      <div class="input-field">
+        <h3>2. Which platform do you prefer for coding? <span style="color: red;">*</span></h3>
+        <label><input type="radio" name="q2" required> Visual Studio Code</label>
+        <label><input type="radio" name="q2"> IntelliJ IDEA</label>
+        <label><input type="radio" name="q2"> Sublime Text</label>
+        <label><input type="radio" name="q2"> Notepad++</label>
+      </div>
+
+      <div class="input-field">
+        <h3>3. How often do you code in a week? <span style="color: red;">*</span></h3>
+        <label><input type="radio" name="q3" required> Daily</label>
+        <label><input type="radio" name="q3"> 3-5 times</label>
+        <label><input type="radio" name="q3"> Once or twice</label>
+        <label><input type="radio" name="q3"> Rarely</label>
+      </div>
+
+      <div class="input-field">
+        <h3>4. Which domain are you most interested in? <span style="color: red;">*</span></h3>
+        <label><input type="radio" name="q4" required> Web Development</label>
+        <label><input type="radio" name="q4"> Data Science</label>
+        <label><input type="radio" name="q4"> Mobile Apps</label>
+        <label><input type="radio" name="q4"> Cybersecurity</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+      
+      <p class="disclaimer">Never submit passwords through this form.</p>
+      <p class="terms">
+        <a href="#">Report Abuse.</a> <a href="#">Terms of condition.</a>
+        <a href="#">Privacy Policy.</a>
+      </p>
+      <h1 class="footer-text">CompEd | All rights reserved.</h1>
+    </form>
+  </body>
+</html>
